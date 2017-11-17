@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A3907B0-3BE0-4C64-8854-B9C65E948C4C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SysPark</RootNamespace>
+    <AssemblyName>SysPark</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="ButtonMod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\ButtonMod.dll</HintPath>
+    </Reference>
+    <Reference Include="ComboBoxMod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\ComboBoxMod.dll</HintPath>
+    </Reference>
+    <Reference Include="DatePicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\DatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="LabelShadow, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\LabelShadow.dll</HintPath>
+    </Reference>
+    <Reference Include="MaskedTextBoxMod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\MaskedTextBoxMod.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PanelStyle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\PanelStyle.dll</HintPath>
+    </Reference>
+    <Reference Include="PictureBoxMod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\PictureBoxMod.dll</HintPath>
+    </Reference>
+    <Reference Include="ShadowPanel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\ShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TabControlMod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\TabControlMod.dll</HintPath>
+    </Reference>
+    <Reference Include="TextBoxMod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\TextBoxMod.dll</HintPath>
+    </Reference>
+    <Reference Include="ToolTipMod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Workspaces\Projeto Restaurante\MenuPad\Lib\ToolTipMod.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controler\Address.cs" />
+    <Compile Include="Controler\BLCaixa.cs" />
+    <Compile Include="Controler\BLCargo.cs" />
+    <Compile Include="Controler\BLCliente.cs" />
+    <Compile Include="Controler\BLContato.cs" />
+    <Compile Include="Controler\BLEndereco.cs" />
+    <Compile Include="Controler\BLFidelidade.cs" />
+    <Compile Include="Controler\BLFornecedor.cs" />
+    <Compile Include="Controler\BLFuncionario.cs" />
+    <Compile Include="Controler\BLGeral.cs" />
+    <Compile Include="Controler\BLGrupo.cs" />
+    <Compile Include="Controler\BLImpressaoRelatorio.cs" />
+    <Compile Include="Controler\BLImpressora.cs" />
+    <Compile Include="Controler\BLLogin.cs" />
+    <Compile Include="Controler\BLNetworkAdapter.cs" />
+    <Compile Include="Controler\BLOrcamento.cs" />
+    <Compile Include="Controler\BLOrdemServico.cs" />
+    <Compile Include="Controler\BLProduto.cs" />
+    <Compile Include="Controler\BLSacola.cs" />
+    <Compile Include="Controler\BLSeguranca.cs" />
+    <Compile Include="Controler\BLServicos.cs" />
+    <Compile Include="Controler\BLTerminal.cs" />
+    <Compile Include="Controler\BuscaCep.cs" />
+    <Compile Include="Controler\clsEstoque.cs" />
+    <Compile Include="Controler\InvalidArgumentException.cs" />
+    <Compile Include="Controler\Request.cs" />
+    <Compile Include="Controler\Response.cs" />
+    <Compile Include="Controler\Util.cs" />
+    <Compile Include="DAO\clsDados.cs" />
+    <Compile Include="Model\ModAtualizacao.cs" />
+    <Compile Include="Model\ModCaixa.cs" />
+    <Compile Include="Model\ModCargo.cs" />
+    <Compile Include="Model\ModCliente.cs" />
+    <Compile Include="Model\ModFidelidade.cs" />
+    <Compile Include="Model\ModFornecedor.cs" />
+    <Compile Include="Model\ModFuncionario.cs" />
+    <Compile Include="Model\ModGeral.cs" />
+    <Compile Include="Model\ModGrupo.cs" />
+    <Compile Include="Model\ModImpressora.cs" />
+    <Compile Include="Model\ModOrdemServico.cs" />
+    <Compile Include="Model\ModPessoas.cs" />
+    <Compile Include="Model\ModProduto.cs" />
+    <Compile Include="Model\ModProdutoServico.cs" />
+    <Compile Include="Model\ModSeguranca.cs" />
+    <Compile Include="Model\ModServicos.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\clsFuncoesGenericas.cs" />
+    <Compile Include="View\clsValidacao.cs" />
+    <Compile Include="View\Dropshadow .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAberturaCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAberturaCaixa.designer.cs">
+      <DependentUpon>frmAberturaCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBuscaCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBuscaCargo.designer.cs">
+      <DependentUpon>frmBuscaCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBuscaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBuscaCliente.designer.cs">
+      <DependentUpon>frmBuscaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBuscaEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBuscaEndereco.designer.cs">
+      <DependentUpon>frmBuscaEndereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBuscaFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBuscaFuncionario.designer.cs">
+      <DependentUpon>frmBuscaFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBuscaSeguranca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBuscaSeguranca.designer.cs">
+      <DependentUpon>frmBuscaSeguranca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCadCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCadCargo.designer.cs">
+      <DependentUpon>frmCadCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCadClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCadClientes.designer.cs">
+      <DependentUpon>frmCadClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCadFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCadFuncionarios.designer.cs">
+      <DependentUpon>frmCadFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCadLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCadLogin.designer.cs">
+      <DependentUpon>frmCadLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCadTipoVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCadTipoVeiculo.designer.cs">
+      <DependentUpon>frmCadTipoVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmCaixa.designer.cs">
+      <DependentUpon>frmCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEntradaSaidaVeiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEntradaSaidaVeiculos.designer.cs">
+      <DependentUpon>frmEntradaSaidaVeiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmContagemCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmContagemCaixa.designer.cs">
+      <DependentUpon>frmContagemCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmDescansoTela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmDescansoTela.designer.cs">
+      <DependentUpon>frmDescansoTela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmFechaCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmFechaCaixa.designer.cs">
+      <DependentUpon>frmFechaCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmHome.designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmInformacoesEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmInformacoesEmpresa.designer.cs">
+      <DependentUpon>frmInformacoesEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLoading.designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLoginEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLoginEntrada.designer.cs">
+      <DependentUpon>frmLoginEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMessage_Box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMessage_Box.designer.cs">
+      <DependentUpon>frmMessage_Box.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMovimentoDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMovimentoDia.designer.cs">
+      <DependentUpon>frmMovimentoDia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBackupDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBackupDataBase.designer.cs">
+      <DependentUpon>frmBackupDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmReceber.designer.cs">
+      <DependentUpon>frmReceber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmSeguranca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSeguranca.designer.cs">
+      <DependentUpon>frmSeguranca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTecladoNumerico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTecladoNumerico.designer.cs">
+      <DependentUpon>frmTecladoNumerico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTerminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTerminal.designer.cs">
+      <DependentUpon>frmTerminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTipoCartao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTipoCartao.designer.cs">
+      <DependentUpon>frmTipoCartao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTirarFoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTirarFoto.designer.cs">
+      <DependentUpon>frmTirarFoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SplashScreen.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\Dropshadow .resx">
+      <DependentUpon>Dropshadow .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAberturaCaixa.resx">
+      <DependentUpon>frmAberturaCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBuscaCargo.resx">
+      <DependentUpon>frmBuscaCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBuscaCliente.resx">
+      <DependentUpon>frmBuscaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBuscaEndereco.resx">
+      <DependentUpon>frmBuscaEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBuscaFuncionario.resx">
+      <DependentUpon>frmBuscaFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBuscaSeguranca.resx">
+      <DependentUpon>frmBuscaSeguranca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCadCargo.resx">
+      <DependentUpon>frmCadCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCadClientes.resx">
+      <DependentUpon>frmCadClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCadFuncionarios.resx">
+      <DependentUpon>frmCadFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCadLogin.resx">
+      <DependentUpon>frmCadLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCadTipoVeiculo.resx">
+      <DependentUpon>frmCadTipoVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmCaixa.resx">
+      <DependentUpon>frmCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEntradaSaidaVeiculos.resx">
+      <DependentUpon>frmEntradaSaidaVeiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmContagemCaixa.resx">
+      <DependentUpon>frmContagemCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmDescansoTela.resx">
+      <DependentUpon>frmDescansoTela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmFechaCaixa.resx">
+      <DependentUpon>frmFechaCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmInformacoesEmpresa.resx">
+      <DependentUpon>frmInformacoesEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLoginEntrada.resx">
+      <DependentUpon>frmLoginEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMessage_Box.resx">
+      <DependentUpon>frmMessage_Box.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMovimentoDia.resx">
+      <DependentUpon>frmMovimentoDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBackupDataBase.resx">
+      <DependentUpon>frmBackupDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmReceber.resx">
+      <DependentUpon>frmReceber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmSeguranca.resx">
+      <DependentUpon>frmSeguranca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTecladoNumerico.resx">
+      <DependentUpon>frmTecladoNumerico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTerminal.resx">
+      <DependentUpon>frmTerminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTipoCartao.resx">
+      <DependentUpon>frmTipoCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTirarFoto.resx">
+      <DependentUpon>frmTirarFoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Lib\AForge.Video.DirectShow.dll" />
+    <Content Include="Lib\AForge.Video.dll" />
+    <Content Include="Lib\ButtonMod.dll" />
+    <Content Include="Lib\ComboBoxMod.dll" />
+    <Content Include="Lib\DatePicker.dll" />
+    <Content Include="Lib\LabelShadow.dll" />
+    <Content Include="Lib\MaskedTextBoxMod.dll" />
+    <Content Include="Lib\Microsoft.SqlServer.ConnectionInfo.dll" />
+    <Content Include="Lib\Microsoft.SqlServer.Smo.dll" />
+    <Content Include="Lib\PanelStyle.dll" />
+    <Content Include="Lib\PictureBoxMod.dll" />
+    <Content Include="Lib\ShadowPanel.dll" />
+    <Content Include="Lib\TabControlMod.dll" />
+    <Content Include="Lib\TextBoxMod.dll" />
+    <Content Include="Lib\ToolTipMod.dll" />
+    <None Include="Resources\image_black_and_white1.png" />
+    <None Include="Resources\Minus.png" />
+    <None Include="Resources\Imagem_100.png" />
+    <None Include="Resources\Imagem_50.png" />
+    <None Include="Resources\image_black_and_white.png" />
+    <None Include="Resources\Expand_25.png" />
+    <None Include="Resources\Collapse_25.png" />
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
