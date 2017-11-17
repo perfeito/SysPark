@@ -128,6 +128,7 @@
     <Compile Include="Controler\BLSeguranca.cs" />
     <Compile Include="Controler\BLServicos.cs" />
     <Compile Include="Controler\BLTerminal.cs" />
+    <Compile Include="Controler\BLTipoVeiculo.cs" />
     <Compile Include="Controler\BuscaCep.cs" />
     <Compile Include="Controler\clsEstoque.cs" />
     <Compile Include="Controler\InvalidArgumentException.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="Model\ModProdutoServico.cs" />
     <Compile Include="Model\ModSeguranca.cs" />
     <Compile Include="Model\ModServicos.cs" />
+    <Compile Include="Model\ModTipoVeiculo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\clsFuncoesGenericas.cs" />
@@ -187,6 +189,12 @@
     </Compile>
     <Compile Include="View\frmBuscaFuncionario.designer.cs">
       <DependentUpon>frmBuscaFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBuscaTipoVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBuscaTipoVeiculo.designer.cs">
+      <DependentUpon>frmBuscaTipoVeiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmBuscaSeguranca.cs">
       <SubType>Form</SubType>
@@ -360,6 +368,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmBuscaFuncionario.resx">
       <DependentUpon>frmBuscaFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBuscaTipoVeiculo.resx">
+      <DependentUpon>frmBuscaTipoVeiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmBuscaSeguranca.resx">
       <DependentUpon>frmBuscaSeguranca.cs</DependentUpon>

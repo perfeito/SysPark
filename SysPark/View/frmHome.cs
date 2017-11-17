@@ -200,6 +200,7 @@ namespace SysPark
         {
             cadastros.Add(new KeyValuePair<string, string>("btnCliente", "Mensalistas"));
             cadastros.Add(new KeyValuePair<string, string>("btnFuncionario", "Funcionários"));
+            cadastros.Add(new KeyValuePair<string, string>("btnTipoVeiculo", "Tipo de Veículo"));
             cadastros.Add(new KeyValuePair<string, string>("btnCargo", "Cargos"));
             cadastros.Add(new KeyValuePair<string, string>("btnLogin", "Login"));
 
@@ -210,6 +211,7 @@ namespace SysPark
         {
             pesquisas.Add(new KeyValuePair<string, string>("btnCliente", "Mensalistas"));
             pesquisas.Add(new KeyValuePair<string, string>("btnFuncionario", "Funcionários"));
+            pesquisas.Add(new KeyValuePair<string, string>("btnTipoVeiculo", "Tipo de Veículo"));
             pesquisas.Add(new KeyValuePair<string, string>("btnCargo", "Cargos"));
 
             pesquisas.Sort(OrdemAlfabetica);
@@ -276,6 +278,12 @@ namespace SysPark
                             Mensagem.ShowDialog();
                             return;
                         }
+                    }
+                    break;
+                case "btnTipoVeiculo":
+                    {
+                        frmCadTipoVeiculo objfrmCadTipoVeiculo = new frmCadTipoVeiculo(0);
+                        objfrmCadTipoVeiculo.ShowDialog();
                     }
                     break;
                 case "btnCargo":
@@ -346,6 +354,12 @@ namespace SysPark
                             Mensagem.ShowDialog();
                             return;
                         }
+                    }
+                    break;
+                case "btnTipoVeiculo":
+                    {
+                        frmBuscaTipoVeiculo objfrmBuscaTipoVeiculo = new frmBuscaTipoVeiculo();
+                        objfrmBuscaTipoVeiculo.ShowDialog();
                     }
                     break;
                 case "btnCargo":

@@ -8,8 +8,8 @@ namespace SysPark.View
     public partial class frmCadTipoVeiculo : Form
     {
         readonly clsFuncoesGenericas objBLFuncoesGenerica = new clsFuncoesGenericas();
-        ModGrupo objModGrupo = new ModGrupo();
-        BLGrupo objBlGrupo = new BLGrupo();
+        ModTipoVeiculo objModTipoVeiculo = new ModTipoVeiculo();
+        BLTipoVeiculo objBLTipoVeiculo = new BLTipoVeiculo();
         private int opcao;
         public int IdSubGrupo = 0;
 
@@ -28,17 +28,6 @@ namespace SysPark.View
             lblcadSubGrupo.MouseUp += objBLFuncoesGenerica.Form_MouseUp;
         }
 
-        /*private const int CS_DROPSHADOW = 0x20000;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ClassStyle |= CS_DROPSHADOW;
-                return cp;
-            }
-        } */
-
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -56,20 +45,10 @@ namespace SysPark.View
         private void frmCadSubGrupo_Load(object sender, EventArgs e)
         {
             objBLFuncoesGenerica.Drop_Shadow(this);
-
-            bool falha = false;
-            objBLFuncoesGenerica.CarregaNomeUsuario_Load(lblnomeUsuario, ref falha);
-            if (falha == true)
-                Application.Exit();
-            objBLFuncoesGenerica.CarregaImagemUsuario_Load(pcbUsuario, ref falha);
-            if (falha == true)
-                Application.Exit();
-
+            
             if (opcao == 1)
             {
-                txtSubGrupo.Enabled = true;
-                rbAtivo.Enabled = true;
-                rbInativo.Enabled = true;
+                panel8.Enabled = true;
                 btnEditar.Enabled = true;
                 btnCancelar.Enabled = true;
                 btnNovo.Enabled = false;
@@ -85,19 +64,17 @@ namespace SysPark.View
                 btnSalvar.Enabled = false;
                 btnEditar.Enabled = false;
                 btnCancelar.Enabled = false;
-                txtSubGrupo.Enabled = false;
-                rbAtivo.Enabled = false;
-                rbInativo.Enabled = false;
+                panel8.Enabled = false;
             }
         }
 
         public void MontaDados()
         {
-            IdSubGrupo = objModGrupo.IdSubGRupo;
-            txtSubGrupo.Text = objModGrupo.NomeSubGrupo;
-            lblnomeAtualizacao.Text = objModGrupo.NomeAtualiza;
-            lbldataAtualizacao.Text = objModGrupo.DataAtualiza.ToString();
-            if (objModGrupo.SitSubGrupo == true)
+            IdSubGrupo = objModTipoVeiculo.IdTipo;
+            txtDescricao.Text = objModTipoVeiculo.Descrição;
+            txtCortesia.Text = objModTipoVeiculo.CortesiaAte.ToString();
+            txtValorHora.Text = objModTipoVeiculo.ValorHora.ToString();
+            if (objModTipoVeiculo.Ativo == true)
             {
                 rbAtivo.Checked = true;
                 rbInativo.Checked = false;
@@ -111,22 +88,19 @@ namespace SysPark.View
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            txtSubGrupo.Enabled = true;
-            rbAtivo.Enabled = true;
-            rbInativo.Enabled = true;
+            panel8.Enabled = true;
             btnSalvar.Enabled = true;
             btnCancelar.Enabled = true;
             btnPesquisar.Enabled = false;
             btnNovo.Enabled = false;
-            txtSubGrupo.Focus();
+            txtDescricao.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             objBLFuncoesGenerica.LimpaCampos(this);
-            lblnomeAtualizacao.Text = string.Empty;
-            lbldataAtualizacao.Text = string.Empty;
-            txtSubGrupo.Enabled = false;
+            panel8.Enabled = false;
+
 
             btnNovo.Enabled = true;
             btnPesquisar.Enabled = true;
@@ -139,12 +113,12 @@ namespace SysPark.View
         {
             try
             {
-                if (string.IsNullOrEmpty(txtSubGrupo.Text))
+                if (string.IsNullOrEmpty(txtDescricao.Text))
                 {
-                    var Mensagem = new frmMessage_Box("Insira o nome do SubGrupo", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
+                    var Mensagem = new frmMessage_Box("Insira a descrição", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
                     Mensagem.ShowDialog();
 
-                    txtSubGrupo.Focus();
+                    txtDescricao.Focus();
                     return;
                 }
                 if (rbAtivo.Checked == false && rbInativo.Checked == false)
@@ -159,36 +133,18 @@ namespace SysPark.View
                 {
                     try
                     {
-                        var objGrupo = objBlGrupo.VerificaSubGrupoExiste(txtSubGrupo.Text);
 
-                        if (objGrupo.NomeSubGrupo != txtSubGrupo.Text && objGrupo.IdSubGRupo == -1)
-                        {
-                            objModGrupo.NomeSubGrupo = txtSubGrupo.Text;
-                            objModGrupo.NomeAtualiza = lblnomeUsuario.Text;
-                            if (rbAtivo.Checked == true)
-                            {
-                                objModGrupo.SitSubGrupo = true;
-                            }
-                            else
-                            {
-                                objModGrupo.SitSubGrupo = false;
-                            }
+                        objModTipoVeiculo.Descrição = txtDescricao.Text;
+                        objModTipoVeiculo.Ativo = rbAtivo.Checked;
+                        objModTipoVeiculo.CortesiaAte = Convert.ToInt32(txtCortesia.Text);
+                        objModTipoVeiculo.ValorHora = Convert.ToDecimal(txtValorHora.Text);
 
-                            objBlGrupo.InsereSubGrupo(objModGrupo);
+                        objBLTipoVeiculo.InsereTipoVeiculo(objModTipoVeiculo);
 
-                            var Mensagem = new frmMessage_Box("SubGrupo cadastrado com sucesso.", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Information);
-                            Mensagem.ShowDialog();
+                        var Mensagem = new frmMessage_Box("SubGrupo cadastrado com sucesso.", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Information);
+                        Mensagem.ShowDialog();
 
-                            btnCancelar_Click(sender, e);
-                        }
-                        else
-                        {
-                            var Mensagem = new frmMessage_Box("Já existe um SubGrupo com este nome.\rDigite outro nome.", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Error);
-                            Mensagem.ShowDialog();
-
-                            txtSubGrupo.Clear();
-                            txtSubGrupo.Focus();
-                        }
+                        btnCancelar_Click(sender, e);
                     }
                     catch (Exception erro)
                     {
@@ -215,12 +171,12 @@ namespace SysPark.View
             {
                 if (IdSubGrupo != 0)
                 {
-                    if (string.IsNullOrEmpty(txtSubGrupo.Text))
+                    if (string.IsNullOrEmpty(txtDescricao.Text))
                     {
-                        var Mensagem = new frmMessage_Box("Insira o nome do Grupo", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
+                        var Mensagem = new frmMessage_Box("Insira a descrição", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
                         Mensagem.ShowDialog();
 
-                        txtSubGrupo.Focus();
+                        txtDescricao.Focus();
                     }
                     if (rbAtivo.Checked == false && rbInativo.Checked == false)
                     {
@@ -229,42 +185,23 @@ namespace SysPark.View
                     }
                     else
                     {
-                        var objSubGrupo = objBlGrupo.VerificaSubGrupoExiste(txtSubGrupo.Text);
+                        objModTipoVeiculo.IdTipo = IdSubGrupo;
+                        objModTipoVeiculo.Descrição = txtDescricao.Text;
+                        objModTipoVeiculo.Ativo = rbAtivo.Checked;
+                        objModTipoVeiculo.CortesiaAte = Convert.ToInt32(txtCortesia.Text);
+                        objModTipoVeiculo.ValorHora = Convert.ToDecimal(txtValorHora.Text);
 
-                        if (objSubGrupo.NomeSubGrupo == txtSubGrupo.Text && objSubGrupo.IdSubGRupo != IdSubGrupo)
-                        {
-                            var Mensagem = new frmMessage_Box("Já existe um SubGrupo com este nome.\rDigite outro nome.", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
-                            Mensagem.ShowDialog();
+                        objBLTipoVeiculo.AtualizaTipoVeiculo(objModTipoVeiculo);
 
-                            txtSubGrupo.Clear();
-                            txtSubGrupo.Focus();
-                        }
-                        else
-                        {
-                            objModGrupo.IdSubGRupo = IdSubGrupo;
-                            objModGrupo.NomeSubGrupo = txtSubGrupo.Text;
-                            objModGrupo.NomeAtualiza = lblnomeUsuario.Text;
-                            if (rbAtivo.Checked == true)
-                            {
-                                objModGrupo.SitSubGrupo = true;
-                            }
-                            else
-                            {
-                                objModGrupo.SitSubGrupo = false;
-                            }
+                        var Mensagem = new frmMessage_Box("Editado com sucesso.", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Information);
+                        Mensagem.ShowDialog();
 
-                            objBlGrupo.AtualizaSubGrupo(objModGrupo);
-
-                            var Mensagem = new frmMessage_Box("SubGrupo editado com sucesso.", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Information);
-                            Mensagem.ShowDialog();
-
-                            btnCancelar_Click(sender, e);
-                        }
+                        btnCancelar_Click(sender, e);
                     }
                 }
                 else
                 {
-                    var Mensagem = new frmMessage_Box("Este SubGrupo ainda não foi cadastrado./n Deseja cadastra-lo agora?", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.YesNo, frmMessage_Box.enumMessageIcon.Question);
+                    var Mensagem = new frmMessage_Box("Este Tipo de Veiculo ainda não foi cadastrado./n Deseja cadastra-lo agora?", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.YesNo, frmMessage_Box.enumMessageIcon.Question);
                     if (Mensagem.ShowDialog() == DialogResult.Yes)
                     {
                         btnSalvar_Click(sender, e);

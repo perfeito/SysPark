@@ -587,7 +587,7 @@ namespace SysPark
             this.imageList.Images.SetKeyName(0, "btnCliente.png");
             this.imageList.Images.SetKeyName(1, "btnFuncionario.png");
             this.imageList.Images.SetKeyName(2, "btnFornecedor.png");
-            this.imageList.Images.SetKeyName(3, "btnFidelidade.png");
+            this.imageList.Images.SetKeyName(3, "btnTipoVeiculo.png");
             this.imageList.Images.SetKeyName(4, "btnCargo.png");
             this.imageList.Images.SetKeyName(5, "btnProduto.png");
             this.imageList.Images.SetKeyName(6, "btnPromocao.png");

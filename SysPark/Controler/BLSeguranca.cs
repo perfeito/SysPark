@@ -204,6 +204,7 @@ namespace SysPark.Controler
                                 CancelUltimoCupom = (bool)dr["CancelUltimoCupom"],
                                 CadTipoFidel = (bool)dr["CadTipoFidelidade"],
                                 CadPrecoFidel = (bool)dr["CadPrecoFidelidade"],
+                                Backup = (bool)dr["BackupInfo"],
                             };
                             return Seguranca;
                         }
