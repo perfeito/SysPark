@@ -29,38 +29,7 @@ namespace SysPark.Controler
                 throw;
             }
         }
-
-        public void InsereItemNaVenda(ModProduto Item)
-        {
-            try
-            {
-                using (var objConexao = clsDados.ConectaBanco())
-                {
-                    using (var objCommand = new SqlCommand("InsereItemNaVenda", objConexao))
-                    {
-                        objCommand.CommandType = CommandType.StoredProcedure;
-
-                        objCommand.Parameters.AddWithValue("@CodigoItem", Item.CodigoItem);
-                        objCommand.Parameters.AddWithValue("@IdVenda", Item.IdSacola);
-                        objCommand.Parameters.AddWithValue("@IdProduto", Item.IdProduto);
-                        objCommand.Parameters.AddWithValue("@PrecoUnitario", Item.PrecoVenda);
-                        objCommand.Parameters.AddWithValue("@Qtd", Item.QtdVenda);
-                        objCommand.Parameters.AddWithValue("@TotalItem", Item.TotalItem);
-                        objCommand.Parameters.AddWithValue("@DescontoItem", Item.DescontoItem);
-                        objCommand.Parameters.AddWithValue("@DescontoFidel", Item.DescontoFidelidade);
-                        objCommand.Parameters.AddWithValue("@ItemCancelado", Item.ItemCancelado);
-                        objCommand.Parameters.AddWithValue("@idOperadorDesc", Item.IdOperadorDesc);
-                        objCommand.Parameters.AddWithValue("@idOperadorCancel", Item.IdOperadorCancel);
-
-                        clsDados.ExecutaComando(objCommand, objConexao);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        
 
         public ModCaixa SelecionaValeTrocaCaixa(long idvale)
         {
@@ -156,56 +125,7 @@ namespace SysPark.Controler
                 throw;
             }
         }               
-
-        public ModProduto SelecionaItemCaixaCodigo(Int64 codigo)
-        {
-            try
-            {
-                using (var objConn = clsDados.ConectaBanco())
-                {
-                    using (var objCommand = new SqlCommand("SelecionaItemCaixaCodigo", objConn))
-                    {
-                        objCommand.CommandType = CommandType.StoredProcedure;
-
-                        objCommand.Parameters.AddWithValue("@Codigo", codigo); 
-
-                        var dr = clsDados.RetornaDadosReader(objCommand, objConn);
-
-                        ModProduto objModMaterial = null;
-
-                        if (!dr.HasRows)
-                        {
-                            objModMaterial = new ModProduto
-                            {
-                                IdProduto = -1,
-                            };
-                            return objModMaterial;
-                        }
-                        else
-                        {
-                            dr.Read();
-
-                            objModMaterial = new ModProduto
-                            {
-                                IdProduto = Convert.ToInt64((dr["Id"]).ToString()),
-                                CodBarras =  Convert.ToInt64((dr["Codigo"]).ToString()),
-                                NomeProduto = (dr["Nome"]).ToString(),
-                                PrecoVenda = Convert.ToDecimal((dr["Preço"]).ToString()),
-                                ImagemProduto = (byte[])dr["Imagem"],
-                                Aliquota = dr["Aliquota"].ToString(),
-                                Ibpt = (decimal)dr["IBPT"],
-                            };
-                            return objModMaterial;
-                        }
-
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }        
+        
 
         public DataTable SelecionaItemCaixaNome(string nome)
         {
@@ -228,57 +148,7 @@ namespace SysPark.Controler
                 throw;
             }
         }
-
-        public ModProduto SelecionaItemCaixaPromocaoCodigo(Int64 codigo)
-        {
-            try
-            {
-                using (var objConn = clsDados.ConectaBanco())
-                {
-                    using (var objCommand = new SqlCommand("SelecionaItemCaixaPromocaoCodigo", objConn))
-                    {
-                        objCommand.CommandType = CommandType.StoredProcedure;
-
-                        objCommand.Parameters.AddWithValue("@Codigo", codigo);
-
-                        var dr = clsDados.RetornaDadosReader(objCommand, objConn);
-
-                        ModProduto objModMaterial = null;
-
-                        if (!dr.HasRows)
-                        {
-                            objModMaterial = new ModProduto
-                            {
-                                IdProduto = -1,
-                            };
-                            return objModMaterial;
-                        }
-                        else
-                        {
-                            dr.Read();
-
-                            objModMaterial = new ModProduto
-                            {
-                                IdProduto = Convert.ToInt64((dr["Id"]).ToString()),
-                                CodBarras = Convert.ToInt64((dr["Codigo"]).ToString()),
-                                NomeProduto = (dr["Nome"]).ToString(),
-                                PrecoVenda = Convert.ToDecimal((dr["Preço"]).ToString()),
-                                ImagemProduto = (byte[])dr["Imagem"],
-                                Aliquota = dr["Aliquota"].ToString(),
-                                Ibpt = (decimal)dr["IBPT"],
-                            };
-                            return objModMaterial;
-                        }
-
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
+        
         public DataTable SelecionaItemCaixaTodos()
         {
             try
@@ -517,58 +387,7 @@ namespace SysPark.Controler
                 throw;
             }
         }
-
-        public ModProduto PegaItemPraCancelar(Int64 codigo, Int64 idvenda)
-        {
-            try
-            {
-                using (var objConn = clsDados.ConectaBanco())
-                {
-                    using (var objCommand = new SqlCommand("PegaItemPraCancelar", objConn))
-                    {
-                        objCommand.CommandType = CommandType.StoredProcedure;
-
-                        objCommand.Parameters.AddWithValue("@IdVenda", idvenda);
-                        objCommand.Parameters.AddWithValue("@Codigo", codigo);
-
-                        var dr = clsDados.RetornaDadosReader(objCommand, objConn);
-
-                        ModProduto objModMaterial = null;
-
-                        if (!dr.HasRows)
-                        {
-                            objModMaterial = new ModProduto
-                            {
-                                IdItemVenda = -1,
-                            };
-                            return objModMaterial;
-                        }
-                        else
-                        {
-                            dr.Read();
-
-                            objModMaterial = new ModProduto
-                            {
-                                IdItemVenda = Convert.ToInt64((dr["IdItem"]).ToString()),
-                                CodBarras = Convert.ToInt64((dr["Código"]).ToString()),
-                                NomeProduto = (dr["Nome"]).ToString(),
-                                PrecoVenda = Convert.ToDecimal((dr["Preço"]).ToString()),
-                                QtdVenda = Convert.ToDecimal((dr["Qtd"]).ToString()),
-                                TotalItem = Convert.ToDecimal((dr["Total"]).ToString()),
-                                CodigoItem = (int)dr["Cod. Item"],
-                                DescontoFidelidade = (decimal)dr["DescFidel"],
-                            };
-                            return objModMaterial;
-                        }
-
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        
 
         public void CancelaItem(Int64 idItemvenda, Int64 idVenda, Int64 idOperadorCancel)
         {

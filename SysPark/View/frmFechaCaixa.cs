@@ -19,7 +19,6 @@ namespace SysPark.View
         clsFuncoesGenericas objFuncao = new clsFuncoesGenericas();
         BLCaixa objBlCaixa = new BLCaixa();
         BLTerminal objBlTerminal = new BLTerminal();
-        BLImpressora objBlImp = new BLImpressora();
         ModCaixa objModCaixa = new ModCaixa();        
         Int64 idcaixa;
         private int
@@ -71,9 +70,6 @@ namespace SysPark.View
                                      ? dadosCaixa.NomePessoa.Substring(0, 30)
                                      : dadosCaixa.NomePessoa;
             nomeTerminal = dadosCaixa.NomeTerminal;
-
-            var tipo = objBlImp.VerificaImpressoraUsoCaixa(idterminal);
-            marcaImp = tipo.Marca;
 
             MontaValores();
 

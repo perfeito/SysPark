@@ -353,6 +353,9 @@
             this.txtCortesia.NovaBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtCortesia.Size = new System.Drawing.Size(152, 30);
             this.txtCortesia.TabIndex = 89;
+            this.txtCortesia.Text = "0";
+            this.txtCortesia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCortesia_KeyPress);
+            this.txtCortesia.Leave += new System.EventHandler(this.txtCortesia_Leave);
             // 
             // label2
             // 
@@ -386,6 +389,8 @@
             this.txtValorHora.NovaBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtValorHora.Size = new System.Drawing.Size(152, 30);
             this.txtValorHora.TabIndex = 87;
+            this.txtValorHora.Text = "0,00";
+            this.txtValorHora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorHora_KeyPress);
             // 
             // label1
             // 

@@ -78,6 +78,26 @@ namespace SysPark.Controler
             }
         }
 
+        public DataTable BuscaTipoVeiculoAtivos()
+        {
+            try
+            {
+                using (var objConexao = clsDados.ConectaBanco())
+                {
+                    using (var objCommand = new SqlCommand("BuscaTipoVeiculoAtivos", objConexao))
+                    {
+                        objCommand.CommandType = CommandType.StoredProcedure;
+
+                        return clsDados.RetornaDados(objCommand);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public void AtualizaTipoVeiculo(ModTipoVeiculo objTipoVeiculo)
         {
             try

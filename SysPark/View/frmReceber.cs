@@ -20,7 +20,6 @@ namespace SysPark.View
         ModCaixa objModCaixa = new ModCaixa();
         BLCaixa objBlCaixa = new BLCaixa();
         BLTerminal objBlTerminal = new BLTerminal();
-        BLImpressora objBlImp = new BLImpressora();
         frmTecladoNumerico teclado = new frmTecladoNumerico();
         frmCaixa caixa;
         decimal 

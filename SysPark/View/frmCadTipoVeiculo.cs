@@ -228,5 +228,20 @@ namespace SysPark.View
         {
             Util.SlideMenu(pnlMenu, pnlMenu.Height, 45, 150, 0);
         }
+
+        private void txtValorHora_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            objBLFuncoesGenerica.txtMoeda_KeyDown(sender, e);
+        }
+
+        private void txtCortesia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtCortesia_Leave(object sender, EventArgs e)
+        {
+            //objBLFuncoesGenerica.txtNumero_Leave(sender, e);
+        }
     }
 }

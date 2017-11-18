@@ -16,7 +16,6 @@ namespace SysPark.View
         BLCliente objBlCliente = new BLCliente();
         BLContato objBlContato = new BLContato();
         BLEndereco objBlEndereco = new BLEndereco();
-        BLFidelidade objBlFidel = new BLFidelidade();
         private int opcao;
         private string[] estados = new string[] { "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" };
 

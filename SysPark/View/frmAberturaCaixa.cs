@@ -19,7 +19,6 @@ namespace SysPark.View
         BLTerminal objBlTerminal = new BLTerminal();
         BLCaixa objBlCaixa = new BLCaixa();
         BLGeral objBlGeral = new BLGeral();
-        BLImpressora objBlImp = new BLImpressora();
         private DataTable dt;
         private DataRow row;
         public string 
@@ -210,8 +209,6 @@ namespace SysPark.View
             mskdataAbertura.Text = DateTime.Now.ToString();
 
             terminal = objBlTerminal.BuscaTerminalPorMac(BLNetworkAdapter.Mac);
-            var tipo = objBlImp.VerificaImpressoraUsoCaixa(terminal);
-            marcaImp = tipo.Marca;
 
             var dtAtual = objBlGeral.VerificaMovimentoDiaAberto();
             var row = dtAtual.Rows[0];

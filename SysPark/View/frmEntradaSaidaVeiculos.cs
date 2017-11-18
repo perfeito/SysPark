@@ -19,7 +19,6 @@ namespace SysPark.View
     {
         clsFuncoesGenericas objFuncao = new clsFuncoesGenericas();
         BLCaixa objBlCaixa = new BLCaixa();
-        ModProduto objModItem = new ModProduto();
 
         public frmEntradaSaidaVeiculos()
         {
@@ -97,8 +96,7 @@ namespace SysPark.View
                 {
                     txtDescricao.Clear();                   
                     
-                        objModItem = objBlCaixa.SelecionaItemCaixaCodigo(Convert.ToInt64(txtCodigo.Text));
-                        objModItem.ItemCancelado = false;
+                        
                     MontaDadosItemConsulta();                   
 
                     txtCodigo.Clear();  
@@ -113,10 +111,7 @@ namespace SysPark.View
 
         public void MontaDadosItemConsulta()
         {            
-            txtCodigo.Text = objModItem.CodBarras.ToString();
-            txtDescricao.Text = objModItem.NomeProduto;
-            txtPreco.Text = objModItem.PrecoVenda.ToString();
-            pcbImagem.Image = objFuncao.ConverteByte_Imagem(objModItem.ImagemProduto);
+            
         }
 
         private void txtPreco_Enter(object sender, EventArgs e)

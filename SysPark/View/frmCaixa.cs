@@ -20,17 +20,14 @@ namespace SysPark.View
     {
         clsFuncoesGenericas objFuncao = new clsFuncoesGenericas();
         BLSeguranca objBlSeg = new BLSeguranca();
-        BLFidelidade objBlFidel = new BLFidelidade();
         BLGeral objBlGeral = new BLGeral();
         BLCaixa objBlCaixa = new BLCaixa();
         BLTerminal objBlTerminal = new BLTerminal();
-        BLImpressora objBlImp = new BLImpressora();
         BLCliente objBlCliente = new BLCliente();
         ModSeguranca objModSeg = new ModSeguranca();
         ModCliente objModCliente = new ModCliente();
         ModCaixa objModCaixa = new ModCaixa();
         ModProdutoServico objModItem = new ModProdutoServico();
-        ModFidelidade objModFidel = new ModFidelidade();
         ModSeguranca Seg;
         frmTecladoNumerico teclado = new frmTecladoNumerico();
         public string
@@ -476,24 +473,7 @@ namespace SysPark.View
             aliquota = objModItem.Aliquota;
             percIbpt = objModItem.Ibpt;
         }
-
-        //verifica se tem desconto no plano fidelidade
-        public void VerificaDescFidelidade()
-        {
-            if (objModCliente.Fidelidade == true)
-            {
-                if (objBlFidel.VerificaPlanoFidelidadeAtivo(objModCliente.IdTipoFidelidade))
-                {
-                    if (objBlFidel.VerificaProdutoTemPrecoPlano(objModCliente.IdTipoFidelidade, idProdutoServico))
-                    {
-                        percFidel = objBlFidel.PegaPercentualDescontoProduto(objModCliente.IdTipoFidelidade, idProdutoServico);
-
-                        CalculaDescontoFidelidade(percFidel);
-                    }
-                }
-            }
-        }
-
+        
         //Calcula desconto de fidelidade do cliente
         public void CalculaDescontoFidelidade(decimal desc)
         {
