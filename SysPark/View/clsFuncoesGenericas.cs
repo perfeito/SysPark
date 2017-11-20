@@ -369,18 +369,19 @@ namespace SysPark
             }
         }
 
-        public void txtCodigo_Leave(object sender, EventArgs e)
+        public void txtPlaca_Leave(object sender, EventArgs e)
         {
             try
             {
-                var txtCodigo = (sender as TextBox);
+                //var txtPlaca = (sender as TextBox);
 
-                if (txtCodigo != null)
-                {
-                    txtCodigo.Text = txtCodigo.Text == string.Empty
-                                       ? "0000000000000"
-                                       : string.Format("{0:0000000000000}", double.Parse(txtCodigo.Text));
-                }
+                //if (txtPlaca != null)
+                //{
+                //    var valida = txtPlaca.Text.Length == 8;
+                //    tb.Text = txtPlaca.Text.Length == valida
+                //                       ? "   -    "
+                //                       : string.Format("{0:0000000000000}", double.Parse(txtPlaca.Text));
+                //}
             }
             catch (Exception ex)
             {

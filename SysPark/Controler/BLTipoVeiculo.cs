@@ -35,6 +35,45 @@ namespace SysPark.Controler
                 throw;
             }
         }
+        
+
+            public ModTipoVeiculo BuscaTipoVeiculoPorID(int id)
+        {
+            try
+            {
+                using (var objConexao = clsDados.ConectaBanco())
+                {
+                    using (var objCommand = new SqlCommand("BuscaTipoVeiculoPorID", objConexao))
+                    {
+                        objCommand.CommandType = CommandType.StoredProcedure;
+
+                        objCommand.Parameters.AddWithValue("@ID", id);
+
+                        var dr = clsDados.RetornaDadosReader(objCommand, objConexao);
+
+                        ModTipoVeiculo modTipoVeiculo = new ModTipoVeiculo();
+
+                        while (dr.Read())
+                        {
+                            modTipoVeiculo = new ModTipoVeiculo
+                            {
+                                Descrição = dr["Descrição"].ToString(),
+                                Ativo = true,
+                                CortesiaAte = Convert.ToInt32( dr["Minutos de Cortesia"]),
+                                IdTipo = Convert.ToInt32(dr["ID"]),
+                                ValorHora = Convert.ToDecimal(dr["Valor da hora"])
+                            };
+                        }
+
+                        return modTipoVeiculo;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public DataTable BuscaTipoVeiculo(string nomeTipoVeiculo)
         {
@@ -78,7 +117,7 @@ namespace SysPark.Controler
             }
         }
 
-        public DataTable BuscaTipoVeiculoAtivos()
+        public List<KeyValuePair<string, int>> BuscaTipoVeiculoAtivos()
         {
             try
             {
@@ -86,9 +125,20 @@ namespace SysPark.Controler
                 {
                     using (var objCommand = new SqlCommand("BuscaTipoVeiculoAtivos", objConexao))
                     {
+                        var listTipoVeiculo = new List<KeyValuePair<string, int>>();
+
                         objCommand.CommandType = CommandType.StoredProcedure;
 
-                        return clsDados.RetornaDados(objCommand);
+                        var dr = clsDados.RetornaDadosReader(objCommand, objConexao);
+
+                        while (dr.Read())
+                        {
+                            listTipoVeiculo.Add(new KeyValuePair<string, int>(dr["Descrição"].ToString(), Convert.ToInt32(dr["ID"])));
+                        }
+
+                        return listTipoVeiculo;
+
+
                     }
                 }
             }

@@ -32,11 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCaixa));
             this.pnlCaixa = new System.Windows.Forms.Panel();
             this.pnlCaixa2 = new System.Windows.Forms.Panel();
+            this.pnlMinCortesia = new System.Windows.Forms.Panel();
+            this.txtMInCortesia = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtHorarioEntrada = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnReceber = new System.Windows.Forms.Button();
             this.btnPesqisar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.pnlDescomto = new System.Windows.Forms.Panel();
@@ -60,6 +63,8 @@
             this.pnlvalorUnitario2 = new System.Windows.Forms.Panel();
             this.lblvalorUnitario = new System.Windows.Forms.Label();
             this.pnlQuantidade = new System.Windows.Forms.Panel();
+            this.pnlQuantiade2 = new System.Windows.Forms.Panel();
+            this.cmbTipoVeiculo = new ComboBoxMod.ComboBoxMod();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.pnlCodigo = new System.Windows.Forms.Panel();
             this.txtPlaca = new System.Windows.Forms.TextBox();
@@ -73,10 +78,9 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pnlQuantiade2 = new System.Windows.Forms.Panel();
-            this.cmbTipo = new ComboBoxMod.ComboBoxMod();
             this.pnlCaixa.SuspendLayout();
             this.pnlCaixa2.SuspendLayout();
+            this.pnlMinCortesia.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlDescomto.SuspendLayout();
             this.pnltotalItem.SuspendLayout();
@@ -84,9 +88,9 @@
             this.pnlDescricao.SuspendLayout();
             this.pnlvalorUnitario.SuspendLayout();
             this.pnlQuantidade.SuspendLayout();
+            this.pnlQuantiade2.SuspendLayout();
             this.pnlCodigo.SuspendLayout();
             this.pnlTotal.SuspendLayout();
-            this.pnlQuantiade2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCaixa
@@ -113,8 +117,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCaixa2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlCaixa2.Controls.Add(this.pnlMinCortesia);
             this.pnlCaixa2.Controls.Add(this.panel1);
-            this.pnlCaixa2.Controls.Add(this.btnReceber);
             this.pnlCaixa2.Controls.Add(this.btnPesqisar);
             this.pnlCaixa2.Controls.Add(this.btnVoltar);
             this.pnlCaixa2.Controls.Add(this.pnlDescomto);
@@ -131,6 +135,64 @@
             this.pnlCaixa2.Size = new System.Drawing.Size(895, 545);
             this.pnlCaixa2.TabIndex = 77;
             // 
+            // pnlMinCortesia
+            // 
+            this.pnlMinCortesia.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pnlMinCortesia.BackColor = System.Drawing.Color.Black;
+            this.pnlMinCortesia.Controls.Add(this.txtMInCortesia);
+            this.pnlMinCortesia.Controls.Add(this.panel4);
+            this.pnlMinCortesia.Controls.Add(this.label2);
+            this.pnlMinCortesia.Location = new System.Drawing.Point(318, 231);
+            this.pnlMinCortesia.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlMinCortesia.Name = "pnlMinCortesia";
+            this.pnlMinCortesia.Size = new System.Drawing.Size(242, 90);
+            this.pnlMinCortesia.TabIndex = 139;
+            // 
+            // txtMInCortesia
+            // 
+            this.txtMInCortesia.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMInCortesia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtMInCortesia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMInCortesia.Enabled = false;
+            this.txtMInCortesia.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
+            this.txtMInCortesia.ForeColor = System.Drawing.Color.LightGray;
+            this.txtMInCortesia.Location = new System.Drawing.Point(-16, 30);
+            this.txtMInCortesia.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMInCortesia.MaxLength = 30;
+            this.txtMInCortesia.Name = "txtMInCortesia";
+            this.txtMInCortesia.ReadOnly = true;
+            this.txtMInCortesia.Size = new System.Drawing.Size(257, 54);
+            this.txtMInCortesia.TabIndex = 83;
+            this.txtMInCortesia.Tag = "V";
+            this.txtMInCortesia.Text = "0";
+            this.txtMInCortesia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel4.Location = new System.Drawing.Point(0, 30);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(242, 37);
+            this.panel4.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
+            this.label2.Location = new System.Drawing.Point(39, 1);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(167, 29);
+            this.label2.TabIndex = 84;
+            this.label2.Text = "Min. Cortesia";
+            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -138,10 +200,10 @@
             this.panel1.Controls.Add(this.txtHorarioEntrada);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(290, 232);
+            this.panel1.Location = new System.Drawing.Point(36, 339);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 90);
+            this.panel1.Size = new System.Drawing.Size(243, 90);
             this.panel1.TabIndex = 83;
             // 
             // txtHorarioEntrada
@@ -149,9 +211,10 @@
             this.txtHorarioEntrada.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtHorarioEntrada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtHorarioEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHorarioEntrada.Enabled = false;
             this.txtHorarioEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
             this.txtHorarioEntrada.ForeColor = System.Drawing.Color.LightGray;
-            this.txtHorarioEntrada.Location = new System.Drawing.Point(-30, 30);
+            this.txtHorarioEntrada.Location = new System.Drawing.Point(-17, 30);
             this.txtHorarioEntrada.Margin = new System.Windows.Forms.Padding(4);
             this.txtHorarioEntrada.MaxLength = 30;
             this.txtHorarioEntrada.Name = "txtHorarioEntrada";
@@ -159,7 +222,7 @@
             this.txtHorarioEntrada.Size = new System.Drawing.Size(257, 54);
             this.txtHorarioEntrada.TabIndex = 78;
             this.txtHorarioEntrada.Tag = "V";
-            this.txtHorarioEntrada.Text = "12:00";
+            this.txtHorarioEntrada.Text = "00:00";
             this.txtHorarioEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel2
@@ -171,7 +234,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 30);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(228, 37);
+            this.panel2.Size = new System.Drawing.Size(243, 37);
             this.panel2.TabIndex = 0;
             // 
             // label1
@@ -181,38 +244,18 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(36, 1);
+            this.label1.Location = new System.Drawing.Point(43, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 29);
             this.label1.TabIndex = 79;
             this.label1.Text = "Hora Entrada";
             // 
-            // btnReceber
-            // 
-            this.btnReceber.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReceber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnReceber.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnReceber.FlatAppearance.BorderSize = 0;
-            this.btnReceber.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnReceber.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnReceber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReceber.ForeColor = System.Drawing.Color.LightGray;
-            this.btnReceber.Location = new System.Drawing.Point(537, 332);
-            this.btnReceber.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReceber.Name = "btnReceber";
-            this.btnReceber.Size = new System.Drawing.Size(333, 92);
-            this.btnReceber.TabIndex = 138;
-            this.btnReceber.Text = "Receber\r\n(F11)";
-            this.btnReceber.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnReceber.UseVisualStyleBackColor = false;
-            this.btnReceber.Click += new System.EventHandler(this.btnReceber_Click);
-            // 
             // btnPesqisar
             // 
             this.btnPesqisar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnPesqisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnPesqisar.Enabled = false;
             this.btnPesqisar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnPesqisar.FlatAppearance.BorderSize = 0;
             this.btnPesqisar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
@@ -220,12 +263,12 @@
             this.btnPesqisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesqisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesqisar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnPesqisar.Location = new System.Drawing.Point(710, 229);
+            this.btnPesqisar.Location = new System.Drawing.Point(710, 233);
             this.btnPesqisar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPesqisar.Name = "btnPesqisar";
             this.btnPesqisar.Size = new System.Drawing.Size(160, 92);
             this.btnPesqisar.TabIndex = 134;
-            this.btnPesqisar.Text = "Pesquisar\n(F2)";
+            this.btnPesqisar.Text = "Pesquisar";
             this.btnPesqisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPesqisar.UseVisualStyleBackColor = false;
             this.btnPesqisar.Click += new System.EventHandler(this.btnPesqisar_Click);
@@ -241,7 +284,7 @@
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnVoltar.Location = new System.Drawing.Point(537, 229);
+            this.btnVoltar.Location = new System.Drawing.Point(710, 339);
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(4);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(160, 92);
@@ -258,10 +301,10 @@
             this.pnlDescomto.Controls.Add(this.txtDesconto);
             this.pnlDescomto.Controls.Add(this.pnlDesconto2);
             this.pnlDescomto.Controls.Add(this.lblDesconto);
-            this.pnlDescomto.Location = new System.Drawing.Point(290, 334);
+            this.pnlDescomto.Location = new System.Drawing.Point(319, 444);
             this.pnlDescomto.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDescomto.Name = "pnlDescomto";
-            this.pnlDescomto.Size = new System.Drawing.Size(227, 90);
+            this.pnlDescomto.Size = new System.Drawing.Size(241, 90);
             this.pnlDescomto.TabIndex = 86;
             // 
             // txtDesconto
@@ -269,17 +312,17 @@
             this.txtDesconto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDesconto.Enabled = false;
             this.txtDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
             this.txtDesconto.ForeColor = System.Drawing.Color.LightGray;
-            this.txtDesconto.Location = new System.Drawing.Point(-32, 30);
+            this.txtDesconto.Location = new System.Drawing.Point(-18, 30);
             this.txtDesconto.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesconto.MaxLength = 30;
             this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.ReadOnly = true;
             this.txtDesconto.Size = new System.Drawing.Size(257, 54);
             this.txtDesconto.TabIndex = 80;
             this.txtDesconto.Tag = "V";
-            this.txtDesconto.Text = "0,00";
+            this.txtDesconto.Text = "0.00";
             this.txtDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDesconto.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
@@ -294,7 +337,7 @@
             this.pnlDesconto2.Location = new System.Drawing.Point(0, 30);
             this.pnlDesconto2.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDesconto2.Name = "pnlDesconto2";
-            this.pnlDesconto2.Size = new System.Drawing.Size(227, 37);
+            this.pnlDesconto2.Size = new System.Drawing.Size(241, 37);
             this.pnlDesconto2.TabIndex = 0;
             // 
             // lblDesconto
@@ -304,7 +347,7 @@
             this.lblDesconto.BackColor = System.Drawing.Color.Transparent;
             this.lblDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesconto.ForeColor = System.Drawing.Color.LightGray;
-            this.lblDesconto.Location = new System.Drawing.Point(49, 1);
+            this.lblDesconto.Location = new System.Drawing.Point(56, 1);
             this.lblDesconto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDesconto.Name = "lblDesconto";
             this.lblDesconto.Size = new System.Drawing.Size(123, 29);
@@ -329,6 +372,7 @@
             this.txtHorarioAtual.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtHorarioAtual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtHorarioAtual.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHorarioAtual.Enabled = false;
             this.txtHorarioAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
             this.txtHorarioAtual.ForeColor = System.Drawing.Color.LightGray;
             this.txtHorarioAtual.Location = new System.Drawing.Point(3, 30);
@@ -339,7 +383,7 @@
             this.txtHorarioAtual.Size = new System.Drawing.Size(257, 54);
             this.txtHorarioAtual.TabIndex = 78;
             this.txtHorarioAtual.Tag = "V";
-            this.txtHorarioAtual.Text = "00:00";
+            this.txtHorarioAtual.Text = "00:00 PM";
             this.txtHorarioAtual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtHorarioAtual.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtHorarioAtual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
@@ -378,10 +422,10 @@
             this.pnlsubTotal.Controls.Add(this.txtsubTotal);
             this.pnlsubTotal.Controls.Add(this.pnlsubTotal2);
             this.pnlsubTotal.Controls.Add(this.lblsubTotal);
-            this.pnlsubTotal.Location = new System.Drawing.Point(36, 332);
+            this.pnlsubTotal.Location = new System.Drawing.Point(40, 444);
             this.pnlsubTotal.Margin = new System.Windows.Forms.Padding(4);
             this.pnlsubTotal.Name = "pnlsubTotal";
-            this.pnlsubTotal.Size = new System.Drawing.Size(242, 90);
+            this.pnlsubTotal.Size = new System.Drawing.Size(239, 90);
             this.pnlsubTotal.TabIndex = 85;
             // 
             // txtsubTotal
@@ -389,9 +433,10 @@
             this.txtsubTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtsubTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtsubTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtsubTotal.Enabled = false;
             this.txtsubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
             this.txtsubTotal.ForeColor = System.Drawing.Color.LightGray;
-            this.txtsubTotal.Location = new System.Drawing.Point(-16, 30);
+            this.txtsubTotal.Location = new System.Drawing.Point(-20, 30);
             this.txtsubTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtsubTotal.MaxLength = 30;
             this.txtsubTotal.Name = "txtsubTotal";
@@ -399,7 +444,7 @@
             this.txtsubTotal.Size = new System.Drawing.Size(257, 54);
             this.txtsubTotal.TabIndex = 83;
             this.txtsubTotal.Tag = "V";
-            this.txtsubTotal.Text = "0,00";
+            this.txtsubTotal.Text = "0.00";
             this.txtsubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtsubTotal.Enter += new System.EventHandler(this.txtValor_Enter);
             this.txtsubTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
@@ -414,7 +459,7 @@
             this.pnlsubTotal2.Location = new System.Drawing.Point(0, 30);
             this.pnlsubTotal2.Margin = new System.Windows.Forms.Padding(4);
             this.pnlsubTotal2.Name = "pnlsubTotal2";
-            this.pnlsubTotal2.Size = new System.Drawing.Size(242, 37);
+            this.pnlsubTotal2.Size = new System.Drawing.Size(239, 37);
             this.pnlsubTotal2.TabIndex = 0;
             // 
             // lblsubTotal
@@ -424,7 +469,7 @@
             this.lblsubTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblsubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsubTotal.ForeColor = System.Drawing.Color.LightGray;
-            this.lblsubTotal.Location = new System.Drawing.Point(62, 1);
+            this.lblsubTotal.Location = new System.Drawing.Point(60, 1);
             this.lblsubTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblsubTotal.Name = "lblsubTotal";
             this.lblsubTotal.Size = new System.Drawing.Size(119, 29);
@@ -451,6 +496,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescricao.Enabled = false;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
             this.txtDescricao.ForeColor = System.Drawing.Color.LightGray;
             this.txtDescricao.Location = new System.Drawing.Point(3, 30);
@@ -503,6 +549,7 @@
             this.txtValorHora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtValorHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtValorHora.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorHora.Enabled = false;
             this.txtValorHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
             this.txtValorHora.ForeColor = System.Drawing.Color.LightGray;
             this.txtValorHora.Location = new System.Drawing.Point(-12, 30);
@@ -513,7 +560,7 @@
             this.txtValorHora.Size = new System.Drawing.Size(257, 54);
             this.txtValorHora.TabIndex = 78;
             this.txtValorHora.Tag = "V";
-            this.txtValorHora.Text = "0,00";
+            this.txtValorHora.Text = "0.00";
             this.txtValorHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtValorHora.TextChanged += new System.EventHandler(this.txtCalculo_textChanged);
             this.txtValorHora.Enter += new System.EventHandler(this.txtValor_Enter);
@@ -557,6 +604,43 @@
             this.pnlQuantidade.Name = "pnlQuantidade";
             this.pnlQuantidade.Size = new System.Drawing.Size(253, 90);
             this.pnlQuantidade.TabIndex = 83;
+            // 
+            // pnlQuantiade2
+            // 
+            this.pnlQuantiade2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlQuantiade2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlQuantiade2.Controls.Add(this.cmbTipoVeiculo);
+            this.pnlQuantiade2.Location = new System.Drawing.Point(0, 30);
+            this.pnlQuantiade2.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlQuantiade2.Name = "pnlQuantiade2";
+            this.pnlQuantiade2.Size = new System.Drawing.Size(253, 56);
+            this.pnlQuantiade2.TabIndex = 0;
+            // 
+            // cmbTipoVeiculo
+            // 
+            this.cmbTipoVeiculo.ArrowColor = System.Drawing.Color.LightGray;
+            this.cmbTipoVeiculo.ArrowColorDown = System.Drawing.Color.Red;
+            this.cmbTipoVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.cmbTipoVeiculo.BorderColor = System.Drawing.Color.Black;
+            this.cmbTipoVeiculo.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
+            this.cmbTipoVeiculo.ButtonColor = System.Drawing.Color.Black;
+            this.cmbTipoVeiculo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbTipoVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoVeiculo.EnabledBorderColor = System.Drawing.Color.Black;
+            this.cmbTipoVeiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbTipoVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.5F);
+            this.cmbTipoVeiculo.ForeColor = System.Drawing.Color.LightGray;
+            this.cmbTipoVeiculo.ForecolorSelect = System.Drawing.Color.Black;
+            this.cmbTipoVeiculo.FormattingEnabled = true;
+            this.cmbTipoVeiculo.Location = new System.Drawing.Point(4, 3);
+            this.cmbTipoVeiculo.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTipoVeiculo.Name = "cmbTipoVeiculo";
+            this.cmbTipoVeiculo.SelectColor = System.Drawing.Color.LightGray;
+            this.cmbTipoVeiculo.Size = new System.Drawing.Size(245, 51);
+            this.cmbTipoVeiculo.TabIndex = 100;
+            this.cmbTipoVeiculo.SelectedIndexChanged += new System.EventHandler(this.cmbTipoVeiculo_SelectedIndexChanged);
             // 
             // lblQuantidade
             // 
@@ -604,6 +688,7 @@
             this.txtPlaca.Tag = "C";
             this.txtPlaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPlaca.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtPlaca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPlaca_KeyDown);
             this.txtPlaca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValidaNumero_KeyPress);
             this.txtPlaca.Leave += new System.EventHandler(this.txtCodigo_Leave);
             // 
@@ -651,6 +736,7 @@
             this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
             this.txtTotal.ForeColor = System.Drawing.Color.LightGray;
             this.txtTotal.Location = new System.Drawing.Point(3, 30);
@@ -700,7 +786,7 @@
             this.lblCaixa.BackColor = System.Drawing.Color.Transparent;
             this.lblCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCaixa.ForeColor = System.Drawing.Color.White;
-            this.lblCaixa.Location = new System.Drawing.Point(304, 1);
+            this.lblCaixa.Location = new System.Drawing.Point(341, 1);
             this.lblCaixa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCaixa.Name = "lblCaixa";
             this.lblCaixa.Size = new System.Drawing.Size(223, 31);
@@ -753,41 +839,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pnlQuantiade2
-            // 
-            this.pnlQuantiade2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlQuantiade2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.pnlQuantiade2.Controls.Add(this.cmbTipo);
-            this.pnlQuantiade2.Location = new System.Drawing.Point(0, 30);
-            this.pnlQuantiade2.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlQuantiade2.Name = "pnlQuantiade2";
-            this.pnlQuantiade2.Size = new System.Drawing.Size(253, 56);
-            this.pnlQuantiade2.TabIndex = 0;
-            // 
-            // cmbTipo
-            // 
-            this.cmbTipo.ArrowColor = System.Drawing.Color.LightGray;
-            this.cmbTipo.ArrowColorDown = System.Drawing.Color.Red;
-            this.cmbTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.cmbTipo.BorderColor = System.Drawing.Color.Black;
-            this.cmbTipo.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
-            this.cmbTipo.ButtonColor = System.Drawing.Color.Black;
-            this.cmbTipo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbTipo.EnabledBorderColor = System.Drawing.Color.Black;
-            this.cmbTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.5F);
-            this.cmbTipo.ForeColor = System.Drawing.Color.LightGray;
-            this.cmbTipo.ForecolorSelect = System.Drawing.Color.Black;
-            this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(4, 3);
-            this.cmbTipo.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.SelectColor = System.Drawing.Color.LightGray;
-            this.cmbTipo.Size = new System.Drawing.Size(245, 51);
-            this.cmbTipo.TabIndex = 100;
-            // 
             // frmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -806,6 +857,8 @@
             this.pnlCaixa.ResumeLayout(false);
             this.pnlCaixa.PerformLayout();
             this.pnlCaixa2.ResumeLayout(false);
+            this.pnlMinCortesia.ResumeLayout(false);
+            this.pnlMinCortesia.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlDescomto.ResumeLayout(false);
@@ -820,11 +873,11 @@
             this.pnlvalorUnitario.PerformLayout();
             this.pnlQuantidade.ResumeLayout(false);
             this.pnlQuantidade.PerformLayout();
+            this.pnlQuantiade2.ResumeLayout(false);
             this.pnlCodigo.ResumeLayout(false);
             this.pnlCodigo.PerformLayout();
             this.pnlTotal.ResumeLayout(false);
             this.pnlTotal.PerformLayout();
-            this.pnlQuantiade2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -864,7 +917,6 @@
         public System.Windows.Forms.TextBox txtDesconto;
         public System.Windows.Forms.TextBox txtHorarioAtual;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Button btnReceber;
         private System.Windows.Forms.Button btnPesqisar;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TextBox txtHorarioEntrada;
@@ -875,7 +927,11 @@
         private System.Windows.Forms.Panel pnlvalorUnitario2;
         private System.Windows.Forms.Label lblvalorUnitario;
         private System.Windows.Forms.Panel pnlQuantiade2;
-        public ComboBoxMod.ComboBoxMod cmbTipo;
+        public ComboBoxMod.ComboBoxMod cmbTipoVeiculo;
+        private System.Windows.Forms.Panel pnlMinCortesia;
+        private System.Windows.Forms.TextBox txtMInCortesia;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label2;
     }
 }
 

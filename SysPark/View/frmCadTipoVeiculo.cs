@@ -231,7 +231,7 @@ namespace SysPark.View
 
         private void txtValorHora_KeyPress(object sender, KeyPressEventArgs e)
         {
-            objBLFuncoesGenerica.txtMoeda_KeyDown(sender, e);
+            //objBLFuncoesGenerica.txtMoeda_KeyDown(sender, e);
         }
 
         private void txtCortesia_KeyPress(object sender, KeyPressEventArgs e)

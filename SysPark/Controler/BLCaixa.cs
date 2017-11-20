@@ -8,28 +8,6 @@ namespace SysPark.Controler
 {
     public class BLCaixa
     {
-        public void FinalizarSacola(long idSacola)
-        {
-            try
-            {
-                using (var objConexao = clsDados.ConectaBanco())
-                {
-                    using (var objCommand = new SqlCommand("FinalizarSacola", objConexao))
-                    {
-                        objCommand.CommandType = CommandType.StoredProcedure;
-
-                        objCommand.Parameters.AddWithValue("@IdSacola", idSacola);
-
-                        clsDados.ExecutaComando(objCommand, objConexao);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        
 
         public ModCaixa SelecionaValeTrocaCaixa(long idvale)
         {
@@ -124,71 +102,6 @@ namespace SysPark.Controler
             {
                 throw;
             }
-        }               
-        
-
-        public DataTable SelecionaItemCaixaNome(string nome)
-        {
-            try
-            {
-                using (var objConexao = clsDados.ConectaBanco())
-                {
-                    using (var objCommand = new SqlCommand("SelecionaItemCaixaNome", objConexao))
-                    {
-                        objCommand.CommandType = CommandType.StoredProcedure;
-
-                        objCommand.Parameters.AddWithValue("@Nome", nome);
-
-                        return clsDados.RetornaDados(objCommand);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        
-        public DataTable SelecionaItemCaixaTodos()
-        {
-            try
-            {
-                using (var objConexao = clsDados.ConectaBanco())
-                {
-                    using (var objCommand = new SqlCommand("SelecionaItemCaixaTodos", objConexao))
-                    {
-                        objCommand.CommandType = CommandType.StoredProcedure;                                               
-
-                        return clsDados.RetornaDados(objCommand);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public bool VerificaItemNaPromocao(Int64 codProduto)
-        {
-            try
-            {
-                using (var objConexao = clsDados.ConectaBanco())
-                {
-                    using (var objCommand = new SqlCommand("VerificaItemNaPromocao", objConexao))
-                    {
-                        objCommand.CommandType = CommandType.StoredProcedure;
-
-                        objCommand.Parameters.AddWithValue("@CodProduto", codProduto); 
-
-                        return clsDados.RetornaDados(objCommand).Rows.Count > 0;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
         }
 
         public ModCaixa PegaOperadorCaixaAberto(int idterminal)
@@ -222,6 +135,7 @@ namespace SysPark.Controler
                             objModMaterial = new ModCaixa
                             {
                                 IdCaixa = Convert.ToInt64((dr["IdCaixa"]).ToString()),
+                                
                                 IdcpfcnpjPessoa = Convert.ToInt64((dr["IdCpfOperador"]).ToString()),
                                 NomeTerminal = (dr["NomeTerminal"]).ToString(),
                                 NomePessoa = (dr["NomePessoa"]).ToString(),
@@ -236,44 +150,7 @@ namespace SysPark.Controler
             {
                 throw;
             }
-        }        
-
-        public Int64 AbreVenda(Int64 operador, Int64 idcaixa)
-        {
-            try
-            {
-                using (var objConexao = clsDados.ConectaBanco())
-                {
-                    using (var objCommand = new SqlCommand("AbreVenda", objConexao))
-                    {
-                        objCommand.CommandType = CommandType.StoredProcedure;
-
-                        objCommand.Parameters.AddWithValue("@IdCaixa", idcaixa);
-                        objCommand.Parameters.AddWithValue("@IdCpfOperador", operador);
-
-                        var dt = clsDados.RetornaDados(objCommand);
-
-                        Int64 idvenda = 0;
-                        
-                        if(dt.Rows.Count > 0)
-                        {
-                            var row = dt.Rows[0];
-                            idvenda = Convert.ToInt64((row["IdVenda"].ToString()));
-                            return idvenda;                            
-                        }
-                        else
-                        {
-                            idvenda = -1;
-                            return idvenda;
-                        }    
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        }             
 
         public void FechaVenda(ModCaixa objModCaixa)
         {

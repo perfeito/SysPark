@@ -98,8 +98,6 @@ namespace SysPark.View
             }
             else
             {
-                if(!objBlGeral.VerificaMovimentoDiaAtualFechado())
-                {
                     var dtAtual = objBlGeral.VerificaMovimentoDiaAberto();
 
                     if (dtAtual.Rows.Count > 0)
@@ -124,14 +122,7 @@ namespace SysPark.View
                         DesabilitaCampos();
                         btniabreMovimento.Enabled = true;
                         btnfecharMovimento.Enabled = false;
-                    }
-                }
-                else
-                {
-                    var Mensagem = new frmMessage_Box("O Movimento do Dia da data de hoje já foi fechado.\nEle só poderá ser aberto novamente na próxima data.", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
-                    Mensagem.ShowDialog();
-                    this.Close();
-                }                
+                    }              
             }
         }
 

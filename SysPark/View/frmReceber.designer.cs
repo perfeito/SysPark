@@ -92,7 +92,7 @@
             this.pnlReceber.Controls.Add(this.lblReceber);
             this.pnlReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlReceber.Location = new System.Drawing.Point(0, 0);
-            this.pnlReceber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlReceber.Margin = new System.Windows.Forms.Padding(4);
             this.pnlReceber.Name = "pnlReceber";
             this.pnlReceber.Size = new System.Drawing.Size(1365, 746);
             this.pnlReceber.TabIndex = 8;
@@ -128,7 +128,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1363, 743);
             this.panel1.TabIndex = 1;
@@ -146,7 +146,7 @@
             this.btnDinheiro.ForeColor = System.Drawing.Color.LightGray;
             this.btnDinheiro.Image = ((System.Drawing.Image)(resources.GetObject("btnDinheiro.Image")));
             this.btnDinheiro.Location = new System.Drawing.Point(23, 625);
-            this.btnDinheiro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDinheiro.Margin = new System.Windows.Forms.Padding(4);
             this.btnDinheiro.Name = "btnDinheiro";
             this.btnDinheiro.Size = new System.Drawing.Size(227, 92);
             this.btnDinheiro.TabIndex = 181;
@@ -168,7 +168,7 @@
             this.btnVoltar.ForeColor = System.Drawing.Color.LightGray;
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
             this.btnVoltar.Location = new System.Drawing.Point(1107, 591);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(227, 92);
             this.btnVoltar.TabIndex = 180;
@@ -190,7 +190,7 @@
             this.btnFinalizar.ForeColor = System.Drawing.Color.LightGray;
             this.btnFinalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizar.Image")));
             this.btnFinalizar.Location = new System.Drawing.Point(1107, 303);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(227, 92);
             this.btnFinalizar.TabIndex = 179;
@@ -212,7 +212,7 @@
             this.btnLimpar.ForeColor = System.Drawing.Color.LightGray;
             this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
             this.btnLimpar.Location = new System.Drawing.Point(1107, 449);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(227, 92);
             this.btnLimpar.TabIndex = 178;
@@ -234,7 +234,7 @@
             this.btnCheque.ForeColor = System.Drawing.Color.LightGray;
             this.btnCheque.Image = ((System.Drawing.Image)(resources.GetObject("btnCheque.Image")));
             this.btnCheque.Location = new System.Drawing.Point(836, 625);
-            this.btnCheque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCheque.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheque.Name = "btnCheque";
             this.btnCheque.Size = new System.Drawing.Size(227, 92);
             this.btnCheque.TabIndex = 177;
@@ -256,7 +256,7 @@
             this.btnDebito.ForeColor = System.Drawing.Color.LightGray;
             this.btnDebito.Image = ((System.Drawing.Image)(resources.GetObject("btnDebito.Image")));
             this.btnDebito.Location = new System.Drawing.Point(293, 625);
-            this.btnDebito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDebito.Margin = new System.Windows.Forms.Padding(4);
             this.btnDebito.Name = "btnDebito";
             this.btnDebito.Size = new System.Drawing.Size(227, 92);
             this.btnDebito.TabIndex = 175;
@@ -278,7 +278,7 @@
             this.btnCredito.ForeColor = System.Drawing.Color.LightGray;
             this.btnCredito.Image = ((System.Drawing.Image)(resources.GetObject("btnCredito.Image")));
             this.btnCredito.Location = new System.Drawing.Point(567, 625);
-            this.btnCredito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCredito.Margin = new System.Windows.Forms.Padding(4);
             this.btnCredito.Name = "btnCredito";
             this.btnCredito.Size = new System.Drawing.Size(227, 92);
             this.btnCredito.TabIndex = 174;
@@ -300,7 +300,7 @@
             this.btnZero.ForeColor = System.Drawing.Color.LightGray;
             this.btnZero.Image = ((System.Drawing.Image)(resources.GetObject("btnZero.Image")));
             this.btnZero.Location = new System.Drawing.Point(956, 402);
-            this.btnZero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnZero.Margin = new System.Windows.Forms.Padding(4);
             this.btnZero.Name = "btnZero";
             this.btnZero.Size = new System.Drawing.Size(107, 204);
             this.btnZero.TabIndex = 173;
@@ -322,7 +322,7 @@
             this.btnSete.ForeColor = System.Drawing.Color.LightGray;
             this.btnSete.Image = ((System.Drawing.Image)(resources.GetObject("btnSete.Image")));
             this.btnSete.Location = new System.Drawing.Point(612, 297);
-            this.btnSete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSete.Margin = new System.Windows.Forms.Padding(4);
             this.btnSete.Name = "btnSete";
             this.btnSete.Size = new System.Drawing.Size(107, 98);
             this.btnSete.TabIndex = 172;
@@ -344,7 +344,7 @@
             this.btnOito.ForeColor = System.Drawing.Color.LightGray;
             this.btnOito.Image = ((System.Drawing.Image)(resources.GetObject("btnOito.Image")));
             this.btnOito.Location = new System.Drawing.Point(727, 297);
-            this.btnOito.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOito.Margin = new System.Windows.Forms.Padding(4);
             this.btnOito.Name = "btnOito";
             this.btnOito.Size = new System.Drawing.Size(107, 98);
             this.btnOito.TabIndex = 171;
@@ -366,7 +366,7 @@
             this.btnNove.ForeColor = System.Drawing.Color.LightGray;
             this.btnNove.Image = ((System.Drawing.Image)(resources.GetObject("btnNove.Image")));
             this.btnNove.Location = new System.Drawing.Point(841, 297);
-            this.btnNove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNove.Margin = new System.Windows.Forms.Padding(4);
             this.btnNove.Name = "btnNove";
             this.btnNove.Size = new System.Drawing.Size(107, 98);
             this.btnNove.TabIndex = 170;
@@ -388,7 +388,7 @@
             this.btnQuatro.ForeColor = System.Drawing.Color.LightGray;
             this.btnQuatro.Image = ((System.Drawing.Image)(resources.GetObject("btnQuatro.Image")));
             this.btnQuatro.Location = new System.Drawing.Point(612, 402);
-            this.btnQuatro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuatro.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuatro.Name = "btnQuatro";
             this.btnQuatro.Size = new System.Drawing.Size(107, 98);
             this.btnQuatro.TabIndex = 169;
@@ -410,7 +410,7 @@
             this.btnCinco.ForeColor = System.Drawing.Color.LightGray;
             this.btnCinco.Image = ((System.Drawing.Image)(resources.GetObject("btnCinco.Image")));
             this.btnCinco.Location = new System.Drawing.Point(727, 402);
-            this.btnCinco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCinco.Margin = new System.Windows.Forms.Padding(4);
             this.btnCinco.Name = "btnCinco";
             this.btnCinco.Size = new System.Drawing.Size(107, 98);
             this.btnCinco.TabIndex = 168;
@@ -432,7 +432,7 @@
             this.btnSeis.ForeColor = System.Drawing.Color.LightGray;
             this.btnSeis.Image = ((System.Drawing.Image)(resources.GetObject("btnSeis.Image")));
             this.btnSeis.Location = new System.Drawing.Point(841, 402);
-            this.btnSeis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSeis.Margin = new System.Windows.Forms.Padding(4);
             this.btnSeis.Name = "btnSeis";
             this.btnSeis.Size = new System.Drawing.Size(107, 98);
             this.btnSeis.TabIndex = 167;
@@ -454,7 +454,7 @@
             this.btnUm.ForeColor = System.Drawing.Color.LightGray;
             this.btnUm.Image = ((System.Drawing.Image)(resources.GetObject("btnUm.Image")));
             this.btnUm.Location = new System.Drawing.Point(612, 508);
-            this.btnUm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUm.Margin = new System.Windows.Forms.Padding(4);
             this.btnUm.Name = "btnUm";
             this.btnUm.Size = new System.Drawing.Size(107, 98);
             this.btnUm.TabIndex = 166;
@@ -476,7 +476,7 @@
             this.btnDois.ForeColor = System.Drawing.Color.LightGray;
             this.btnDois.Image = ((System.Drawing.Image)(resources.GetObject("btnDois.Image")));
             this.btnDois.Location = new System.Drawing.Point(727, 508);
-            this.btnDois.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDois.Margin = new System.Windows.Forms.Padding(4);
             this.btnDois.Name = "btnDois";
             this.btnDois.Size = new System.Drawing.Size(107, 98);
             this.btnDois.TabIndex = 165;
@@ -498,7 +498,7 @@
             this.btnTreis.ForeColor = System.Drawing.Color.LightGray;
             this.btnTreis.Image = ((System.Drawing.Image)(resources.GetObject("btnTreis.Image")));
             this.btnTreis.Location = new System.Drawing.Point(841, 508);
-            this.btnTreis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTreis.Margin = new System.Windows.Forms.Padding(4);
             this.btnTreis.Name = "btnTreis";
             this.btnTreis.Size = new System.Drawing.Size(107, 98);
             this.btnTreis.TabIndex = 164;
@@ -520,7 +520,7 @@
             this.btnBackSpace.ForeColor = System.Drawing.Color.LightGray;
             this.btnBackSpace.Image = ((System.Drawing.Image)(resources.GetObject("btnBackSpace.Image")));
             this.btnBackSpace.Location = new System.Drawing.Point(956, 297);
-            this.btnBackSpace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBackSpace.Margin = new System.Windows.Forms.Padding(4);
             this.btnBackSpace.Name = "btnBackSpace";
             this.btnBackSpace.Size = new System.Drawing.Size(107, 98);
             this.btnBackSpace.TabIndex = 163;
@@ -537,7 +537,7 @@
             this.pnlPagamento.Controls.Add(this.pnlPagamento2);
             this.pnlPagamento.Controls.Add(this.lblPagamento);
             this.pnlPagamento.Location = new System.Drawing.Point(567, 142);
-            this.pnlPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPagamento.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPagamento.Name = "pnlPagamento";
             this.pnlPagamento.Size = new System.Drawing.Size(536, 150);
             this.pnlPagamento.TabIndex = 117;
@@ -552,7 +552,7 @@
             this.txtPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 46F);
             this.txtPagamento.ForeColor = System.Drawing.Color.LightGray;
             this.txtPagamento.Location = new System.Drawing.Point(7, 49);
-            this.txtPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPagamento.Margin = new System.Windows.Forms.Padding(4);
             this.txtPagamento.MaxLength = 30;
             this.txtPagamento.Name = "txtPagamento";
             this.txtPagamento.ReadOnly = true;
@@ -561,6 +561,7 @@
             this.txtPagamento.Text = "0,00";
             this.txtPagamento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPagamento.Click += new System.EventHandler(this.txtPagamento_Click);
+            this.txtPagamento.TextChanged += new System.EventHandler(this.txtPagamento_TextChanged);
             this.txtPagamento.Enter += new System.EventHandler(this.txtValores_Enter);
             this.txtPagamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValores_KeyPress);
             this.txtPagamento.Leave += new System.EventHandler(this.txtValores_Leave);
@@ -572,7 +573,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPagamento2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlPagamento2.Location = new System.Drawing.Point(0, 49);
-            this.pnlPagamento2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlPagamento2.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPagamento2.Name = "pnlPagamento2";
             this.pnlPagamento2.Size = new System.Drawing.Size(536, 74);
             this.pnlPagamento2.TabIndex = 0;
@@ -598,7 +599,7 @@
             this.pnlRecebido.Controls.Add(this.pnlRecebido2);
             this.pnlRecebido.Controls.Add(this.lblRecebido);
             this.pnlRecebido.Location = new System.Drawing.Point(23, 299);
-            this.pnlRecebido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlRecebido.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRecebido.Name = "pnlRecebido";
             this.pnlRecebido.Size = new System.Drawing.Size(536, 150);
             this.pnlRecebido.TabIndex = 90;
@@ -613,7 +614,7 @@
             this.txttotalRecebido.Font = new System.Drawing.Font("Microsoft Sans Serif", 46F);
             this.txttotalRecebido.ForeColor = System.Drawing.Color.LightGray;
             this.txttotalRecebido.Location = new System.Drawing.Point(7, 49);
-            this.txttotalRecebido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txttotalRecebido.Margin = new System.Windows.Forms.Padding(4);
             this.txttotalRecebido.MaxLength = 30;
             this.txttotalRecebido.Name = "txttotalRecebido";
             this.txttotalRecebido.ReadOnly = true;
@@ -631,7 +632,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlRecebido2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlRecebido2.Location = new System.Drawing.Point(0, 49);
-            this.pnlRecebido2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlRecebido2.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRecebido2.Name = "pnlRecebido2";
             this.pnlRecebido2.Size = new System.Drawing.Size(536, 74);
             this.pnlRecebido2.TabIndex = 0;
@@ -657,7 +658,7 @@
             this.pnlTroco.Controls.Add(this.pnlTroco2);
             this.pnlTroco.Controls.Add(this.lblTroco);
             this.pnlTroco.Location = new System.Drawing.Point(23, 457);
-            this.pnlTroco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTroco.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTroco.Name = "pnlTroco";
             this.pnlTroco.Size = new System.Drawing.Size(536, 150);
             this.pnlTroco.TabIndex = 89;
@@ -672,7 +673,7 @@
             this.txtTroco.Font = new System.Drawing.Font("Microsoft Sans Serif", 46F);
             this.txtTroco.ForeColor = System.Drawing.Color.LightGray;
             this.txtTroco.Location = new System.Drawing.Point(7, 49);
-            this.txtTroco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTroco.Margin = new System.Windows.Forms.Padding(4);
             this.txtTroco.MaxLength = 30;
             this.txtTroco.Name = "txtTroco";
             this.txtTroco.ReadOnly = true;
@@ -690,7 +691,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTroco2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlTroco2.Location = new System.Drawing.Point(0, 49);
-            this.pnlTroco2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTroco2.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTroco2.Name = "pnlTroco2";
             this.pnlTroco2.Size = new System.Drawing.Size(536, 74);
             this.pnlTroco2.TabIndex = 0;
@@ -717,7 +718,7 @@
             this.pnlTotal.Controls.Add(this.pnlTotal2);
             this.pnlTotal.Controls.Add(this.lblTotal);
             this.pnlTotal.Location = new System.Drawing.Point(23, 142);
-            this.pnlTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTotal.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTotal.Name = "pnlTotal";
             this.pnlTotal.Size = new System.Drawing.Size(536, 150);
             this.pnlTotal.TabIndex = 88;
@@ -732,7 +733,7 @@
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 46F);
             this.txtTotal.ForeColor = System.Drawing.Color.LightGray;
             this.txtTotal.Location = new System.Drawing.Point(7, 49);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotal.MaxLength = 30;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
@@ -750,7 +751,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTotal2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlTotal2.Location = new System.Drawing.Point(0, 49);
-            this.pnlTotal2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTotal2.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTotal2.Name = "pnlTotal2";
             this.pnlTotal2.Size = new System.Drawing.Size(536, 74);
             this.pnlTotal2.TabIndex = 0;
@@ -776,7 +777,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1363, 123);
             this.panel2.TabIndex = 78;
@@ -801,7 +802,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(317, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(107, 98);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -818,7 +819,7 @@
             this.btnFechar.ForeColor = System.Drawing.Color.White;
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
             this.btnFechar.Location = new System.Drawing.Point(1324, 1);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFechar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(40, 37);
             this.btnFechar.TabIndex = 2;
@@ -849,7 +850,7 @@
             this.Controls.Add(this.pnlReceber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmReceber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReceber";

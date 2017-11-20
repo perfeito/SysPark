@@ -53,7 +53,7 @@ namespace SysPark.View
             {
                 case Keys.Enter:
                     {
-                        objFuncao.txtCodigo_Leave(txtCodigo, e);
+                        objFuncao.txtPlaca_Leave(txtCodigo, e);
                         ConsultaItem();
                     }
                     break;

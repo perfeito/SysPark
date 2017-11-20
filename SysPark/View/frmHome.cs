@@ -394,8 +394,21 @@ namespace SysPark
                     break;
                 case "btnCaixa":
                     {
-                        frmCaixa caixa = new frmCaixa();
-                        caixa.ShowDialog();
+                        BLGeral objBlGeral = new BLGeral();
+                        BLCaixa objBlCaixa = new BLCaixa();
+                        idterminal = objBlTerminal.BuscaTerminalPorMac(BLNetworkAdapter.Mac);
+                        var dadosCaixa = objBlCaixa.PegaOperadorCaixaAberto(idterminal);
+
+                        if (dadosCaixa.IdCaixa != -1)
+                        {
+                            frmCaixa caixa = new frmCaixa(dadosCaixa.IdCaixa);
+                            caixa.ShowDialog();
+                        }
+                        else
+                        {
+                            var Mensagem = new frmMessage_Box("O caixa não esta aberto.", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
+                            Mensagem.ShowDialog();
+                        }
                     }
                     break;
                 case "btnAbreCaixa":
@@ -422,11 +435,7 @@ namespace SysPark
                                 if (dtAtual.Rows.Count > 0)
                                 {
                                     var movCaixa = objBlGeral.VerificaMovimentoDiaCaixaAntigoAberto(idterminal);
-
-                                    if (movCaixa.IdMovimentoDia == -1)
-                                    {
-                                        if (!objBlGeral.VerificaMovimentoDiaCaixaAtualFechado(idterminal))
-                                        {
+                                    
                                             var movDia = objBlGeral.VerificaMovimentoDiaCaixaAberto(idterminal);
 
                                             if (movCaixa.IdMovimentoDia != -1)
@@ -445,20 +454,6 @@ namespace SysPark
                                                 Mensagem.ShowDialog();
                                                 return;
                                             }
-                                        }
-                                        else
-                                        {
-                                            var Mensagem = new frmMessage_Box("Já foi feito a REDUÇÃO Z desse terminal hoje.\nEle só poderá ser aberto na próxima data.", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
-                                            Mensagem.ShowDialog();
-                                            return;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        var Mensagem = new frmMessage_Box("O TERMINAL NÃO TEVE O DIA DE ONTEM ENCERRADO.\nÉ NECESSÁRIO FAZER A REDUÇÃO Z.", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
-                                        Mensagem.ShowDialog();
-                                        return;
-                                    }
                                 }
                                 else
                                 {

@@ -119,6 +119,7 @@
     <Compile Include="Controler\BLSeguranca.cs" />
     <Compile Include="Controler\BLTerminal.cs" />
     <Compile Include="Controler\BLTipoVeiculo.cs" />
+    <Compile Include="Controler\BLVenda.cs" />
     <Compile Include="Controler\BuscaCep.cs" />
     <Compile Include="Controler\clsEstoque.cs" />
     <Compile Include="Controler\InvalidArgumentException.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="Model\ModProdutoServico.cs" />
     <Compile Include="Model\ModSeguranca.cs" />
     <Compile Include="Model\ModTipoVeiculo.cs" />
+    <Compile Include="Model\ModVenda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\clsFuncoesGenericas.cs" />

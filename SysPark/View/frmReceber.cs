@@ -263,6 +263,10 @@ namespace SysPark.View
             this.Close();
         }
 
+        private void txtPagamento_TextChanged(object sender, EventArgs e)
+        {
+        }
+
         private void Limpar()
         {
             txtPagamento.Clear();
@@ -473,15 +477,13 @@ namespace SysPark.View
         { 
             var button = (sender as Button);
 
-            if (button != null)
-                txtPagamento.Text += button.Tag;
-
-            objFuncao.txtNumero_Enter(txtPagamento, e);       
+            objFuncao.txtMoeda_KeyDown(txtPagamento, new KeyPressEventArgs( Convert.ToChar( button.Tag)));
+              
         }
         
         private void btnBackSpace_Click(object sender, EventArgs e)
         {
-            objFuncao.BackSpace(txtPagamento);           
+            objFuncao.BackSpace(txtPagamento);            
         }
     }
 }
