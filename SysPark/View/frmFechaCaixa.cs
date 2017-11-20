@@ -21,15 +21,9 @@ namespace SysPark.View
         BLTerminal objBlTerminal = new BLTerminal();
         ModCaixa objModCaixa = new ModCaixa();        
         Int64 idcaixa;
-        private int
-            IRetorno,
-            IRetornoSweda,
-            IRetornoEpson;
         private string
-            textoImpressao,
             operador,
-            nomeTerminal,
-            marcaImp;
+            nomeTerminal;
         decimal desconto;
 
         public frmFechaCaixa()
@@ -44,17 +38,6 @@ namespace SysPark.View
             lblfechaCaixa.MouseMove += objFuncao.Form_MouseMove;
             lblfechaCaixa.MouseUp += objFuncao.Form_MouseUp;
         }
-
-        /*private const int CS_DROPSHADOW = 0x20000;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ClassStyle |= CS_DROPSHADOW;
-                return cp;
-            }
-        }*/
 
         private void frmFechaCaixa_Load(object sender, EventArgs e)
         {
@@ -94,139 +77,6 @@ namespace SysPark.View
             }
         }
 
-        #region FECHAMENTO IMPRESSORA
-
-        private void MontaTextoImpressaoBematech()
-        {            
-            string linha = "================================================\n";
-
-            string textOperador = "Operador: " + operador + "\n";
-            string textTerminal = "Terminal: " + nomeTerminal + "\n";
-
-            string fundo = "Fundo de Caixa: " + txtTroco.Text + "\n";
-            string dinheiro = "Dinheiro: " + txtDinheiro.Text + "\n";
-            string credito = "Crédito: " + txtCredito.Text + "\n";
-            string debito = "Débito: " + txtDebito.Text + "\n";
-            string cheque = "Cheque: " + txtCheque.Text + "\n";
-            string textDesconto = "Desconto: " + desconto.ToString() + "\n";
-            string total = "Total: " + txtTotal.Text + "\n";
-            string valorCancel = "Total Cancelado: " + txtvalorCancel.Text + "\n";
-            string sangria = "Sangria: " + txtSangria.Text + "\n";
-            string suprimento = "Suprimento: " + txtSuprimento.Text + "\n";
-            string valeTroca = "Vale Troca: " + txtVale.Text + "\n";
-
-            textoImpressao = (
-                linha 
-                + "FECHAMENTO DO CAIXA\n" 
-                + linha 
-                + textOperador 
-                + textTerminal 
-                + linha 
-                + "\nSaída de Operador\n\n\n" 
-                + linha 
-                + fundo 
-                + dinheiro 
-                + credito 
-                + debito 
-                + cheque 
-                + valeTroca 
-                + textDesconto 
-                + valorCancel 
-                + sangria 
-                + suprimento 
-                + total 
-                + linha
-                );
-        }
-
-        private void MontaTextoImpressaoSweda()
-        {           
-            string linha = "==========================================\n";
-
-            string textOperador = "Operador: " + operador + "\n";
-            string textTerminal = "Terminal: " + nomeTerminal + "\n";
-
-            string fundo = "Fundo de Caixa: " + txtTroco.Text + "\n";
-            string dinheiro = "Dinheiro: " + txtDinheiro.Text + "\n";
-            string credito = "Crédito: " + txtCredito.Text + "\n";
-            string debito = "Débito: " + txtDebito.Text + "\n";
-            string cheque = "Cheque: " + txtCheque.Text + "\n";
-            string textDesconto = "Desconto: " + desconto.ToString() + "\n";
-            string total = "Total: " + txtTotal.Text + "\n";
-            string valorCancel = "Total Cancelado: " + txtvalorCancel.Text + "\n";
-            string sangria = "Sangria: " + txtSangria.Text + "\n";
-            string suprimento = "Suprimento: " + txtSuprimento.Text + "\n";
-            string valeTroca = "Vale Troca: " + txtVale.Text + "\n";
-
-            textoImpressao = (
-                linha
-                + "FECHAMENTO DO CAIXA\n" 
-                + linha 
-                + textOperador 
-                + textTerminal 
-                + linha
-                + "\nSaída de Operador\n\n\n"
-                + linha 
-                + fundo 
-                + dinheiro 
-                + credito 
-                + debito 
-                + cheque 
-                + valeTroca 
-                + textDesconto 
-                + valorCancel 
-                + sangria 
-                + suprimento 
-                + total 
-                + linha
-                );
-        }
-
-        private void MontaTextoImpressaoEpson()
-        {            
-            string linha = "========================================================\n";
-
-            string textOperador = "<AN>Operador: " + operador + "\n";
-            string textTerminal = "Terminal: " + nomeTerminal + "<DN>\n";
-
-            string fundo = "Fundo de Caixa: " + txtTroco.Text + "\n";
-            string dinheiro = "Dinheiro: " + txtDinheiro.Text + "\n";
-            string credito = "Crédito: " + txtCredito.Text + "\n";
-            string debito = "Débito: " + txtDebito.Text + "\n";
-            string cheque = "Cheque: " + txtCheque.Text + "\n";
-            string textDesconto = "Desconto: " + desconto.ToString() + "\n";
-            string total = "Total: " + txtTotal.Text + "\n";
-            string valorCancel = "Total Cancelado: " + txtvalorCancel.Text + "\n";
-            string sangria = "Sangria: " + txtSangria.Text + "\n";
-            string suprimento = "Suprimento: " + txtSuprimento.Text + "\n";
-            string valeTroca = "Vale Troca: " + txtVale.Text + "\n";
-
-            textoImpressao = 
-                linha 
-                + "FECHAMENTO DO CAIXA\n" 
-                + linha 
-                + textOperador 
-                + textTerminal 
-                + linha 
-                + "\nSaída de Operador\n\n\n" 
-                + linha 
-                + fundo 
-                + dinheiro 
-                + credito 
-                + debito
-                + cheque 
-                + valeTroca
-                + textDesconto
-                + valorCancel 
-                + sangria 
-                + suprimento
-                + total 
-                + linha
-                ;
-        }
-
-        #endregion
-
         private void MontaValores()
         {
             var valores = objBlCaixa.BuscaValoresCaixa(idcaixa);
@@ -238,11 +88,6 @@ namespace SysPark.View
             txtTroco.Text = valores.Troco.ToString();            
             desconto = valores.DescontoVenda;
             txtDesconto.Text = desconto.ToString();
-            txtvalorCancel.Text = valores.ValorCancelado.ToString();
-            txtTicket.Text = valores.Outros.ToString();
-            txtQtdCupons.Text = valores.QtdCupom.ToString();
-            txtSangria.Text = valores.ValorSangria.ToString();
-            txtSuprimento.Text = valores.ValorSuprimento.ToString();
 
             txtTotal.Text = (valores.Troco + valores.Dinheiro + valores.Credito + valores.Debito + valores.Cheque + valores.Outros + valores.ValorSuprimento - valores.ValorSangria).ToString();
         }
@@ -256,6 +101,12 @@ namespace SysPark.View
         {
             objModCaixa.IdCaixa = idcaixa;
             objModCaixa.DataFechamento = DateTime.Now;
+            objBlCaixa.FechaCaixa(objModCaixa);
+
+            var Mensagem = new frmMessage_Box("CAIXA FECHADO COM SUCESSO", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Information);
+            Mensagem.ShowDialog();
+
+            this.Close();
         }
 
         private void frmFechaCaixa_KeyDown(object sender, KeyEventArgs e)

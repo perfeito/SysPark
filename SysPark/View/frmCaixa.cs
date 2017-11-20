@@ -222,6 +222,12 @@ namespace SysPark.View
         {
             btnPesqisar.Enabled = (sender as TextBox).Text.Length == 8;
             btnPesqisar.Text = "Pesquisar";
+            txtDescricao.Text = string.Empty;
+            tbMinutos.Text = "0";
+            txtHorarioEntrada.Text = "00:00";
+            txtsubTotal.Text = "0.00";
+            txtDesconto.Text = "0.00";
+            txtTotal.Text = "0.00";
         }
         
         private void Receber()
@@ -266,9 +272,14 @@ namespace SysPark.View
 
             TimeSpan ts = dt1 - dt2;
 
-            txtsubTotal.Text = (ts.TotalHours * Convert.ToDouble(txtValorHora.Text)).ToString("N2");
+            tbMinutos.Text = Convert.ToInt32(ts.TotalMinutes).ToString();
 
-            txtTotal.Text = (Convert.ToDecimal(txtsubTotal.Text)- Convert.ToDecimal(txtDesconto.Text)).ToString("N2");
+            if (Convert.ToInt32(tbMinutos.Text) > Convert.ToInt32(txtMInCortesia.Text))
+            {
+                txtsubTotal.Text = (ts.TotalHours * Convert.ToDouble(txtValorHora.Text)).ToString("N2");
+
+                txtTotal.Text = (Convert.ToDecimal(txtsubTotal.Text) - Convert.ToDecimal(txtDesconto.Text)).ToString("N2");
+            }
         }
 
         private void CalculaTotal()

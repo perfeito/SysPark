@@ -78,6 +78,10 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tbMinutos = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlCaixa.SuspendLayout();
             this.pnlCaixa2.SuspendLayout();
             this.pnlMinCortesia.SuspendLayout();
@@ -91,6 +95,7 @@
             this.pnlQuantiade2.SuspendLayout();
             this.pnlCodigo.SuspendLayout();
             this.pnlTotal.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCaixa
@@ -117,6 +122,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCaixa2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlCaixa2.Controls.Add(this.panel3);
             this.pnlCaixa2.Controls.Add(this.pnlMinCortesia);
             this.pnlCaixa2.Controls.Add(this.panel1);
             this.pnlCaixa2.Controls.Add(this.btnPesqisar);
@@ -839,6 +845,64 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.tbMinutos);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(319, 339);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(242, 90);
+            this.panel3.TabIndex = 140;
+            // 
+            // tbMinutos
+            // 
+            this.tbMinutos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbMinutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tbMinutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbMinutos.Enabled = false;
+            this.tbMinutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
+            this.tbMinutos.ForeColor = System.Drawing.Color.LightGray;
+            this.tbMinutos.Location = new System.Drawing.Point(-16, 30);
+            this.tbMinutos.Margin = new System.Windows.Forms.Padding(4);
+            this.tbMinutos.MaxLength = 30;
+            this.tbMinutos.Name = "tbMinutos";
+            this.tbMinutos.ReadOnly = true;
+            this.tbMinutos.Size = new System.Drawing.Size(257, 54);
+            this.tbMinutos.TabIndex = 83;
+            this.tbMinutos.Tag = "V";
+            this.tbMinutos.Text = "0";
+            this.tbMinutos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel5.Location = new System.Drawing.Point(0, 30);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(242, 37);
+            this.panel5.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
+            this.label3.Location = new System.Drawing.Point(72, 1);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 29);
+            this.label3.TabIndex = 84;
+            this.label3.Text = "Minutos";
+            // 
             // frmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -878,6 +942,8 @@
             this.pnlCodigo.PerformLayout();
             this.pnlTotal.ResumeLayout(false);
             this.pnlTotal.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -893,7 +959,6 @@
         private System.Windows.Forms.Label lblcodBarras;
         private System.Windows.Forms.Label lblDesconto;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox txtsubTotal;
         private System.Windows.Forms.Label lblsubTotal;
         private System.Windows.Forms.Panel pnlCodigo;
         private System.Windows.Forms.Panel pnlCodigo2;
@@ -932,6 +997,11 @@
         private System.Windows.Forms.TextBox txtMInCortesia;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox tbMinutos;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtsubTotal;
     }
 }
 

@@ -162,6 +162,8 @@ namespace SysPark.Controler
                     {
                         objCommand.CommandType = CommandType.StoredProcedure;
 
+
+
                         objCommand.Parameters.AddWithValue("@IDVENDA", objModCaixa.IdVenda);                        
                         objCommand.Parameters.AddWithValue("@DINHEIRO", objModCaixa.Dinheiro);
                         objCommand.Parameters.AddWithValue("@CREDITO", objModCaixa.Credito);
@@ -394,10 +396,7 @@ namespace SysPark.Controler
                                 Debito = (decimal)(dr["Debito"]),
                                 Cheque = (decimal)(dr["Cheque"]),
                                 Troco = (decimal)(dr["Troco"]),
-                                DescontoVenda = (decimal)(dr["Desconto"]),
-                                ValorCancelado = (decimal)(dr["Valor Cancelado"]),
-                                Outros = (decimal)(dr["Ticket"]),
-                                QtdCupom = (int)(dr["Qtd Cupons"]),
+                                DescontoVenda = (decimal)(dr["Desconto"])
                             };
                             return objModCaixa;
                         }

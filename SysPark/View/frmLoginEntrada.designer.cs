@@ -199,6 +199,7 @@
             this.txtUsuario.NovaBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtUsuario.Size = new System.Drawing.Size(403, 30);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "faber";
             // 
             // txtSenha
             // 
@@ -220,6 +221,7 @@
             this.txtSenha.NovaBorderColor = System.Drawing.SystemColors.Highlight;
             this.txtSenha.Size = new System.Drawing.Size(403, 30);
             this.txtSenha.TabIndex = 2;
+            this.txtSenha.Text = "123456";
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // lblUsuario

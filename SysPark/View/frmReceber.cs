@@ -27,15 +27,8 @@ namespace SysPark.View
             debito,
             credito,
             cheque,
-            ticket,
-            valorvaleTroca,
-            desconto,
             totalRecebido,
             totalPagar;
-        private int
-            IRetorno,
-            IRetornoSweda,
-            IRetornoEpson;
         public string 
             operador,
             marcaImp,
@@ -91,11 +84,6 @@ namespace SysPark.View
                         Limpar();
                     }
                     break;
-                case Keys.F8:
-                    {
-                        btnTicket_Click(sender, e);
-                    }
-                    break;
                 case Keys.F9:
                     {
                         btnCheque_Click(sender, e);
@@ -141,7 +129,7 @@ namespace SysPark.View
 
         private void txtValores_KeyPress(object sender, KeyPressEventArgs e)
         {
-            objFuncao.txtMoeda_KeyDown(sender, e);
+            //objFuncao.txtMoeda_KeyDown(sender, e);
         }        
 
         private void frmReceber_Load(object sender, EventArgs e)
@@ -199,7 +187,7 @@ namespace SysPark.View
         {
             try
             {
-                txttotalRecebido.Text = (dinheiro + cheque + credito + debito + ticket + valorvaleTroca).ToString("N2");
+                txttotalRecebido.Text = (dinheiro + cheque + credito + debito).ToString("N2");
 
                 totalPagar = !string.IsNullOrEmpty(txtTotal.Text)
                                   ? Convert.ToDecimal(txtTotal.Text)
@@ -241,13 +229,22 @@ namespace SysPark.View
             splashthread.Start();
 
             CarregaDadosFinalizar();
-            
-            objBlCaixa.FechaVenda(objModCaixa);
+
+            new BLVenda().FechaVendaPorPlaca(new ModVenda
+            {
+                Placa = caixa.txtPlaca.Text,
+                SubTotal = Convert.ToDecimal(caixa.txtsubTotal.Text),
+                Desconto = Convert.ToDecimal(caixa.txtDesconto.Text),
+                HoraSaida = DateTime.Now,
+                Dinheiro = dinheiro,
+                Debito = debito,
+                Cheque = cheque,
+                Credito = credito,
+                IdCaixaFechamento = caixa.idcaixa
+            }
+            );
 
             objBlCaixa.AtualizaCaixa(objModCaixa);
-
-            var Estoque = new clsEstoque();
-            Estoque.BaixaEstoque(caixa.idvenda);
 
             SplashScreen.UdpateStatusTextWithStatus("Venda finalizada.", TypeOfMessage.Success);
             Thread.Sleep(1000);
@@ -256,11 +253,20 @@ namespace SysPark.View
             Thread.Sleep(1000);
 
             SplashScreen.CloseSplashScreen();
-
-            //var Mensagem = new frmShowMessage("Venda REALIZADA com SUCESSO.\nTROCO: " + txtTroco.Text, "SysPark - ATENÇÃO", frmShowMessage.enumMessageButton.OK, frmShowMessage.enumMessageIcon.Information);
-            //Mensagem.ShowDialog();
-
             this.Close();
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+
+            BLGeral objBlGeral = new BLGeral();
+            var idterminal = objBlTerminal.BuscaTerminalPorMac(BLNetworkAdapter.Mac);
+            var dadosCaixa = objBlCaixa.PegaOperadorCaixaAberto(idterminal);
+
+            frmCaixa caixa1 = new frmCaixa(dadosCaixa.IdCaixa);
+            caixa1.TopMost = true;
+            caixa1.Show();
         }
 
         private void txtPagamento_TextChanged(object sender, EventArgs e)
@@ -275,8 +281,6 @@ namespace SysPark.View
             debito = 0.00m;
             credito = 0.00m;
             cheque = 0.00m;
-            ticket = 0.00m;
-            valorvaleTroca = 0.00m;
             txtPagamento.Focus();
 
             CalculaValores();
@@ -288,19 +292,15 @@ namespace SysPark.View
             objModCaixa.Credito = credito;
             objModCaixa.Debito = debito;
             objModCaixa.Cheque = cheque;
-            objModCaixa.Outros = ticket;
             objModCaixa.DescontoVenda = Convert.ToDecimal(caixa.txtDesconto.Text);
             objModCaixa.ValorRecebido = Convert.ToDecimal(txttotalRecebido.Text);
             objModCaixa.ValorTotal = Convert.ToDecimal(txtTotal.Text);
             objModCaixa.Troco = Convert.ToDecimal(txtTroco.Text);
             objModCaixa.IdCaixa = caixa.idcaixa;
-            objModCaixa.IdVenda = caixa.idvenda;
         }
         
         private void btnDinheiro_Click(object sender, EventArgs e)
         {
-            //objFuncao.txtMoeda_Leave(txtPagamento, e);
-
             dinheiro += !string.IsNullOrEmpty(txtPagamento.Text)
                       ? Convert.ToDecimal(txtPagamento.Text)
                       : 0.00m;
@@ -312,8 +312,6 @@ namespace SysPark.View
 
         private void btnCredito_Click(object sender, EventArgs e)
         {
-            //objFuncao.txtMoeda_Leave(txtPagamento, e);
-
             credito += !string.IsNullOrEmpty(txtPagamento.Text)
                      ? Convert.ToDecimal(txtPagamento.Text)
                      : 0.00m;
@@ -348,126 +346,7 @@ namespace SysPark.View
             txtPagamento.Clear();
             txtPagamento.Focus();
         }
-
-        private void btnTicket_Click(object sender, EventArgs e)
-        {
-            //objFuncao.txtMoeda_Leave(txtPagamento, e);
-
-            ticket += !string.IsNullOrEmpty(txtPagamento.Text)
-                    ? Convert.ToDecimal(txtPagamento.Text)
-                    : 0.00m;
-
-            CalculaValores();
-            txtPagamento.Clear();
-            txtPagamento.Focus();
-        }
-
-        private void CalculaDebito(EventArgs e)
-        {
-            //objFuncao.txtMoeda_Leave(txtPagamento, e);
-
-            debito += !string.IsNullOrEmpty(txtPagamento.Text)
-                    ? Convert.ToDecimal(txtPagamento.Text)
-                    : 0.00m;
-
-            CalculaValores();
-            txtPagamento.Clear();
-            txtPagamento.Focus();
-        }
-
-        private void CalculaCredito(EventArgs e)
-        {
-            //objFuncao.txtMoeda_Leave(txtPagamento, e);
-
-            credito += !string.IsNullOrEmpty(txtPagamento.Text)
-                     ? Convert.ToDecimal(txtPagamento.Text)
-                     : 0.00m;
-
-            CalculaValores();
-            txtPagamento.Clear();
-            txtPagamento.Focus();
-        }
-
-        private void btnTEF_Click(object sender, EventArgs e)
-        {
-            var Mensagem = new frmMessage_Box("Opção não habilitada no momento.", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
-            Mensagem.ShowDialog();
-            return;
-
-            int escolha = 0;
-            frmTipoCartao tipo = new frmTipoCartao(1);
-            tipo.ShowDialog();
-        }
-
-        private void btnPOS_Click(object sender, EventArgs e)
-        {            
-            frmTipoCartao tipo = new frmTipoCartao(2);
-            tipo.ShowDialog();
-
-            if (tipo.Escolha == 1)
-            {
-                CalculaDebito(e);
-            }
-            else if(tipo.Escolha == 2)
-            {
-                CalculaCredito(e);
-            }
-        }
-
-        private void btnCrediario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnvaleTroca_Click(object sender, EventArgs e)
-        {   
-            try
-            {
-                var valeTroca = objBlCaixa.SelecionaValeTrocaCaixa(Convert.ToInt64(txtPagamento.Text.Replace(",", "").Replace(".", "")));
-
-                if (valeTroca.IdValeTroca != -1)
-                {
-                    if (!valeTroca.ValeCancelado)
-                    {
-                        if (!valeTroca.ValeResgatado)
-                        {
-                            txtPagamento.Text = valeTroca.ValorValeTroca.ToString();
-
-                            //objFuncao.txtMoeda_Leave(txtPagamento, e);
-
-                            valorvaleTroca += !string.IsNullOrEmpty(txtPagamento.Text)
-                                            ? Convert.ToDecimal(txtPagamento.Text)
-                                            : 0.00m;
-
-                            CalculaValores();
-                            txtPagamento.Clear();
-                            txtPagamento.Focus();
-                        }
-                        else
-                        {
-                            var Mensagem = new frmMessage_Box("Vale Troca já Utilizado", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
-                            Mensagem.ShowDialog();
-                        }
-                    }
-                    else
-                    {
-                        var Mensagem = new frmMessage_Box("Vale Troca Cancelado", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
-                        Mensagem.ShowDialog();
-                    }
-                }
-                else
-                {
-                    var Mensagem = new frmMessage_Box("Vale Troca Não Encontrado", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Warning);
-                    Mensagem.ShowDialog();
-                }
-            }
-            catch (Exception erro)
-            {
-                var Mensagem = new frmMessage_Box(erro.Message, "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Error);
-                Mensagem.ShowDialog();
-            }
-        }
-
+        
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             Limpar();

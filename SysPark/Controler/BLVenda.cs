@@ -101,9 +101,8 @@ namespace SysPark.Controler
                         objCommand.Parameters.AddWithValue("@Desconto", modVenda.Desconto);
                         objCommand.Parameters.AddWithValue("@HoraSaida", modVenda.HoraSaida);
                         objCommand.Parameters.AddWithValue("@Dinheiro", modVenda.Dinheiro);
-                        objCommand.Parameters.AddWithValue("@Credito", modVenda.Placa);
+                        objCommand.Parameters.AddWithValue("@Credito", modVenda.Credito);
                         objCommand.Parameters.AddWithValue("@Debito", modVenda.Debito);
-                        objCommand.Parameters.AddWithValue("@Credito", modVenda.Placa);
                         objCommand.Parameters.AddWithValue("@Cheque", modVenda.Cheque);
                         objCommand.Parameters.AddWithValue("@IdCaixaFechamento", modVenda.IdCaixaFechamento);
 

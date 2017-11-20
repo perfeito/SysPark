@@ -221,7 +221,7 @@ namespace SysPark
         {
             vendas.Add(new KeyValuePair<string, string>("btnAbreCaixa", "Abrir Caixa"));
             vendas.Add(new KeyValuePair<string, string>("btnCaixa", "Caixa"));
-            vendas.Add(new KeyValuePair<string, string>("btnConsultaPreco", "Consulta Veiculo"));
+            //vendas.Add(new KeyValuePair<string, string>("btnConsultaPreco", "Consulta Veiculo"));
 
             vendas.Sort(OrdemAlfabetica);
         }
@@ -386,12 +386,12 @@ namespace SysPark
 
             switch (btn.Name)
             {
-                case "btnConsultaPreco":
-                    {
-                        frmEntradaSaidaVeiculos consultaPreco = new frmEntradaSaidaVeiculos();
-                        consultaPreco.ShowDialog();
-                    }
-                    break;
+                //case "btnConsultaPreco":
+                //    {
+                //        frmEntradaSaidaVeiculos consultaPreco = new frmEntradaSaidaVeiculos();
+                //        consultaPreco.ShowDialog();
+                //    }
+                //    break;
                 case "btnCaixa":
                     {
                         BLGeral objBlGeral = new BLGeral();
