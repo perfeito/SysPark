@@ -110,6 +110,7 @@ namespace SysPark
             ListaFormVendas();
             ListaFormConfig();
             ListaFormProced();
+            ListaFormRelatorios();
 
             this.BringToFront();
 
@@ -157,6 +158,7 @@ namespace SysPark
         private List<KeyValuePair<string, string>> pesquisas = new List<KeyValuePair<string, string>>();
         private List<KeyValuePair<string, string>> procedimentos = new List<KeyValuePair<string, string>>();
         private List<KeyValuePair<string, string>> vendas = new List<KeyValuePair<string, string>>();
+        private List<KeyValuePair<string, string>> relatorios = new List<KeyValuePair<string, string>>();
         private List<KeyValuePair<string, string>> config = new List<KeyValuePair<string, string>>();
 
         private List<KeyValuePair<string, string>> listaBotoes = new List<KeyValuePair<string, string>>();
@@ -190,6 +192,11 @@ namespace SysPark
                 listaBotoes = procedimentos;
                 CriaBotoes();
             }
+            else if (rbRelatorio.Checked)
+            {
+                listaBotoes = relatorios;
+                CriaBotoes();
+            }
             else if (rbVendas.Checked)
             {
                 listaBotoes = vendas;
@@ -217,9 +224,17 @@ namespace SysPark
             pesquisas.Sort(OrdemAlfabetica);
         }
 
+        private void ListaFormRelatorios()
+        {
+            relatorios.Add(new KeyValuePair<string, string>("btnRelCaixa", "Caixa"));
+            //relatorios.Add(new KeyValuePair<string, string>("btnPromocao", "Descontos"));
+
+            relatorios.Sort(OrdemAlfabetica);
+        }
+
         private void ListaFormVendas()
         {
-            vendas.Add(new KeyValuePair<string, string>("btnAbreCaixa", "Abrir Caixa"));
+            vendas.Add(new KeyValuePair<string, string>("btnAbreCaixa", "Abrir/Fechar Caixa"));
             vendas.Add(new KeyValuePair<string, string>("btnCaixa", "Caixa"));
             //vendas.Add(new KeyValuePair<string, string>("btnConsultaPreco", "Consulta Veiculo"));
 
@@ -239,9 +254,30 @@ namespace SysPark
         private void ListaFormProced()
         {
             procedimentos.Add(new KeyValuePair<string, string>("btnMovDia", "Movimento Dia"));
-            procedimentos.Add(new KeyValuePair<string, string>("btnRelCaixa", "Contagem Caixa"));
+            //procedimentos.Add(new KeyValuePair<string, string>("btnRelCaixa", "Contagem Caixa"));
 
             procedimentos.Sort(OrdemAlfabetica);
+        }
+
+        private void ClickRelatorio(object sender)
+        {
+            Button btn = (sender as Button);
+
+            switch (btn.Name)
+            {
+                case "btnRelCaixa":
+                    {
+                        frmRelatorioCaixa relCaixa = new frmRelatorioCaixa();
+                        relCaixa.ShowDialog();
+                    }
+                    break;
+                case "btnPromocao":
+                    {
+                        frmRelatorioDescontos relDesc = new frmRelatorioDescontos();
+                        relDesc.ShowDialog();
+                    }
+                    break;
+            }
         }
 
         private void ClickCadastro(object sender)
@@ -606,6 +642,8 @@ namespace SysPark
         {
             if (listaBotoes == cadastros)
                 ClickCadastro(sender);
+            if (listaBotoes == relatorios)
+                ClickRelatorio(sender);
             if (listaBotoes == pesquisas)
                 ClickPesquisa(sender);
             if (listaBotoes == vendas)

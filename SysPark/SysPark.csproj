@@ -295,6 +295,18 @@
     <Compile Include="View\frmReceber.designer.cs">
       <DependentUpon>frmReceber.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmRelatorioCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmRelatorioCaixa.designer.cs">
+      <DependentUpon>frmRelatorioCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmRelatorioDescontos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmRelatorioDescontos.designer.cs">
+      <DependentUpon>frmRelatorioDescontos.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmSeguranca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -413,6 +425,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmReceber.resx">
       <DependentUpon>frmReceber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmRelatorioCaixa.resx">
+      <DependentUpon>frmRelatorioCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmRelatorioDescontos.resx">
+      <DependentUpon>frmRelatorioDescontos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmSeguranca.resx">
       <DependentUpon>frmSeguranca.cs</DependentUpon>
