@@ -713,18 +713,15 @@ namespace SysPark.Controler
             }
         }
 
-        public DataTable Relatorio_Precos_Modificados(DateTime inicio, DateTime fim)
+        public DataTable Relatorio_Precos_Modificados()
         {
             try
             {
                 using (var objConexao = clsDados.ConectaBanco())
                 {
-                    using (var objCommand = new SqlCommand("Relatorio_Precos_Modificados", objConexao))
+                    using (var objCommand = new SqlCommand("ListaveiculosPatio", objConexao))
                     {
                         objCommand.CommandType = CommandType.StoredProcedure;
-
-                        objCommand.Parameters.AddWithValue("@DataInicio", inicio);
-                        objCommand.Parameters.AddWithValue("@DataFim", fim);
 
                         return clsDados.RetornaDados(objCommand);
                     }

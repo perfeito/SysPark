@@ -109,6 +109,11 @@ namespace SysPark.View
             this.Close();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void frmFechaCaixa_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)

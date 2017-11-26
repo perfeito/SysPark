@@ -301,11 +301,11 @@
     <Compile Include="View\frmRelatorioCaixa.designer.cs">
       <DependentUpon>frmRelatorioCaixa.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmRelatorioDescontos.cs">
+    <Compile Include="View\frmRelatorioVeiculosPatio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmRelatorioDescontos.designer.cs">
-      <DependentUpon>frmRelatorioDescontos.cs</DependentUpon>
+    <Compile Include="View\frmRelatorioVeiculosPatio.designer.cs">
+      <DependentUpon>frmRelatorioVeiculosPatio.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmSeguranca.cs">
       <SubType>Form</SubType>
@@ -429,8 +429,8 @@
     <EmbeddedResource Include="View\frmRelatorioCaixa.resx">
       <DependentUpon>frmRelatorioCaixa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmRelatorioDescontos.resx">
-      <DependentUpon>frmRelatorioDescontos.cs</DependentUpon>
+    <EmbeddedResource Include="View\frmRelatorioVeiculosPatio.resx">
+      <DependentUpon>frmRelatorioVeiculosPatio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmSeguranca.resx">
       <DependentUpon>frmSeguranca.cs</DependentUpon>

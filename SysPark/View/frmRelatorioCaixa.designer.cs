@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRelatorioCaixa));
             this.pnlrelCaixa = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -71,13 +71,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblrelCaixa = new System.Windows.Forms.Label();
-            this.toolTipMod1 = new ToolTipMod.ToolTipMod();
-            this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnPesquisar = new ButtonMod.ButtonMod();
             this.btnLimpar = new ButtonMod.ButtonMod();
-            this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.lblrelCaixa = new System.Windows.Forms.Label();
+            this.toolTipMod1 = new ToolTipMod.ToolTipMod();
             this.pnlrelCaixa.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -100,14 +98,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlrelCaixa.BackColor = System.Drawing.Color.Black;
             this.pnlrelCaixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlrelCaixa.Controls.Add(this.btnMaximizar);
             this.pnlrelCaixa.Controls.Add(this.panel2);
-            this.pnlrelCaixa.Controls.Add(this.btnMinimizar);
             this.pnlrelCaixa.Controls.Add(this.btnFechar);
             this.pnlrelCaixa.Controls.Add(this.lblrelCaixa);
             this.pnlrelCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlrelCaixa.Location = new System.Drawing.Point(0, 0);
-            this.pnlrelCaixa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlrelCaixa.Margin = new System.Windows.Forms.Padding(4);
             this.pnlrelCaixa.Name = "pnlrelCaixa";
             this.pnlrelCaixa.Size = new System.Drawing.Size(1201, 634);
             this.pnlrelCaixa.TabIndex = 5;
@@ -124,7 +120,7 @@
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(1, 39);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1199, 593);
             this.panel2.TabIndex = 74;
@@ -136,7 +132,7 @@
             this.panel14.Controls.Add(this.label21);
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Location = new System.Drawing.Point(830, 17);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(348, 262);
             this.panel14.TabIndex = 93;
@@ -170,7 +166,7 @@
             this.panel15.Controls.Add(this.label25);
             this.panel15.Controls.Add(this.label24);
             this.panel15.Location = new System.Drawing.Point(1, 30);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(345, 231);
             this.panel15.TabIndex = 0;
@@ -186,7 +182,7 @@
             this.mskHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskHora.ForeColor = System.Drawing.Color.LightGray;
             this.mskHora.Location = new System.Drawing.Point(210, 70);
-            this.mskHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mskHora.Margin = new System.Windows.Forms.Padding(4);
             this.mskHora.MudaBorda = true;
             this.mskHora.MudarCor = false;
             this.mskHora.MudarTitulo = false;
@@ -207,7 +203,7 @@
             this.txtTerminal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTerminal.ForeColor = System.Drawing.Color.LightGray;
             this.txtTerminal.Location = new System.Drawing.Point(153, 159);
-            this.txtTerminal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTerminal.Margin = new System.Windows.Forms.Padding(4);
             this.txtTerminal.MudaBorda = true;
             this.txtTerminal.MudarCor = false;
             this.txtTerminal.MudarTitulo = false;
@@ -227,7 +223,7 @@
             this.mskData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskData.ForeColor = System.Drawing.Color.LightGray;
             this.mskData.Location = new System.Drawing.Point(204, 30);
-            this.mskData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mskData.Margin = new System.Windows.Forms.Padding(4);
             this.mskData.Mask = "00/00/0000";
             this.mskData.MudaBorda = true;
             this.mskData.MudarCor = false;
@@ -261,7 +257,7 @@
             this.txtOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOperador.ForeColor = System.Drawing.Color.LightGray;
             this.txtOperador.Location = new System.Drawing.Point(153, 117);
-            this.txtOperador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOperador.Margin = new System.Windows.Forms.Padding(4);
             this.txtOperador.MudaBorda = true;
             this.txtOperador.MudarCor = false;
             this.txtOperador.MudarTitulo = false;
@@ -314,7 +310,7 @@
             this.panel6.Controls.Add(this.panel11);
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel6.Location = new System.Drawing.Point(15, 193);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(796, 384);
             this.panel6.TabIndex = 90;
@@ -342,7 +338,7 @@
             this.panel11.Controls.Add(this.dgvPesquisa);
             this.panel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel11.Location = new System.Drawing.Point(1, 30);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(794, 353);
             this.panel11.TabIndex = 0;
@@ -353,12 +349,12 @@
             this.dgvPesquisa.AllowUserToDeleteRows = false;
             this.dgvPesquisa.AllowUserToResizeColumns = false;
             this.dgvPesquisa.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPesquisa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPesquisa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -366,38 +362,38 @@
             this.dgvPesquisa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dgvPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPesquisa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPesquisa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPesquisa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPesquisa.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPesquisa.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPesquisa.EnableHeadersVisualStyles = false;
             this.dgvPesquisa.GridColor = System.Drawing.Color.Black;
             this.dgvPesquisa.Location = new System.Drawing.Point(0, 0);
-            this.dgvPesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPesquisa.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPesquisa.Name = "dgvPesquisa";
             this.dgvPesquisa.ReadOnly = true;
             this.dgvPesquisa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPesquisa.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPesquisa.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPesquisa.RowHeadersVisible = false;
             this.dgvPesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPesquisa.Size = new System.Drawing.Size(794, 353);
@@ -411,7 +407,7 @@
             this.pnlData.Controls.Add(this.label5);
             this.pnlData.Controls.Add(this.pnlData2);
             this.pnlData.Location = new System.Drawing.Point(16, 17);
-            this.pnlData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlData.Margin = new System.Windows.Forms.Padding(4);
             this.pnlData.Name = "pnlData";
             this.pnlData.Size = new System.Drawing.Size(391, 166);
             this.pnlData.TabIndex = 89;
@@ -441,7 +437,7 @@
             this.pnlData2.Controls.Add(this.dtpInicio);
             this.pnlData2.Controls.Add(this.lbldataInicio);
             this.pnlData2.Location = new System.Drawing.Point(1, 30);
-            this.pnlData2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlData2.Margin = new System.Windows.Forms.Padding(4);
             this.pnlData2.Name = "pnlData2";
             this.pnlData2.Size = new System.Drawing.Size(389, 135);
             this.pnlData2.TabIndex = 0;
@@ -464,7 +460,7 @@
             this.dtpFim.GridColorCustom = System.Drawing.Color.Black;
             this.dtpFim.HeaderColor = System.Drawing.Color.Black;
             this.dtpFim.Location = new System.Drawing.Point(146, 80);
-            this.dtpFim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFim.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFim.Name = "dtpFim";
             this.dtpFim.Size = new System.Drawing.Size(167, 30);
             this.dtpFim.TabIndex = 82;
@@ -499,7 +495,7 @@
             this.dtpInicio.GridColorCustom = System.Drawing.Color.Black;
             this.dtpInicio.HeaderColor = System.Drawing.Color.Black;
             this.dtpInicio.Location = new System.Drawing.Point(146, 18);
-            this.dtpInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpInicio.Margin = new System.Windows.Forms.Padding(4);
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(167, 30);
             this.dtpInicio.TabIndex = 81;
@@ -523,7 +519,7 @@
             this.panel8.Controls.Add(this.label1);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Location = new System.Drawing.Point(830, 315);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(348, 262);
             this.panel8.TabIndex = 75;
@@ -557,7 +553,7 @@
             this.panel9.Controls.Add(this.txtDinheiroRe);
             this.panel9.Controls.Add(this.lblprecoCusto);
             this.panel9.Location = new System.Drawing.Point(1, 30);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(346, 231);
             this.panel9.TabIndex = 0;
@@ -573,7 +569,7 @@
             this.txtCreditoRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCreditoRe.ForeColor = System.Drawing.Color.LightGray;
             this.txtCreditoRe.Location = new System.Drawing.Point(175, 75);
-            this.txtCreditoRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCreditoRe.Margin = new System.Windows.Forms.Padding(4);
             this.txtCreditoRe.MudaBorda = true;
             this.txtCreditoRe.MudarCor = false;
             this.txtCreditoRe.MudarTitulo = false;
@@ -609,7 +605,7 @@
             this.txtDebitoRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDebitoRe.ForeColor = System.Drawing.Color.LightGray;
             this.txtDebitoRe.Location = new System.Drawing.Point(175, 118);
-            this.txtDebitoRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDebitoRe.Margin = new System.Windows.Forms.Padding(4);
             this.txtDebitoRe.MudaBorda = true;
             this.txtDebitoRe.MudarCor = false;
             this.txtDebitoRe.MudarTitulo = false;
@@ -645,7 +641,7 @@
             this.txtChequeRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChequeRe.ForeColor = System.Drawing.Color.LightGray;
             this.txtChequeRe.Location = new System.Drawing.Point(175, 160);
-            this.txtChequeRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtChequeRe.Margin = new System.Windows.Forms.Padding(4);
             this.txtChequeRe.MudaBorda = true;
             this.txtChequeRe.MudarCor = false;
             this.txtChequeRe.MudarTitulo = false;
@@ -681,7 +677,7 @@
             this.txtDinheiroRe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDinheiroRe.ForeColor = System.Drawing.Color.LightGray;
             this.txtDinheiroRe.Location = new System.Drawing.Point(175, 32);
-            this.txtDinheiroRe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDinheiroRe.Margin = new System.Windows.Forms.Padding(4);
             this.txtDinheiroRe.MudaBorda = true;
             this.txtDinheiroRe.MudarCor = false;
             this.txtDinheiroRe.MudarTitulo = false;
@@ -713,7 +709,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Location = new System.Drawing.Point(448, 17);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(363, 167);
             this.panel3.TabIndex = 66;
@@ -741,51 +737,10 @@
             this.panel5.Controls.Add(this.btnPesquisar);
             this.panel5.Controls.Add(this.btnLimpar);
             this.panel5.Location = new System.Drawing.Point(1, 30);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(361, 137);
             this.panel5.TabIndex = 0;
-            // 
-            // lblrelCaixa
-            // 
-            this.lblrelCaixa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblrelCaixa.AutoSize = true;
-            this.lblrelCaixa.BackColor = System.Drawing.Color.Transparent;
-            this.lblrelCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblrelCaixa.ForeColor = System.Drawing.Color.LightGray;
-            this.lblrelCaixa.Location = new System.Drawing.Point(390, 5);
-            this.lblrelCaixa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblrelCaixa.Name = "lblrelCaixa";
-            this.lblrelCaixa.Size = new System.Drawing.Size(349, 31);
-            this.lblrelCaixa.TabIndex = 1;
-            this.lblrelCaixa.Text = "SysPark - Relatório Caixa\r\n";
-            this.lblrelCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // toolTipMod1
-            // 
-            this.toolTipMod1.AutoSize = false;
-            this.toolTipMod1.BackColor = System.Drawing.Color.Black;
-            this.toolTipMod1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.toolTipMod1.ForeColor = System.Drawing.Color.LightGray;
-            this.toolTipMod1.OwnerDraw = true;
-            this.toolTipMod1.Size = new System.Drawing.Size(100, 30);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.ForeColor = System.Drawing.Color.White;
-            this.btnMaximizar.Image = global::SysPark.Properties.Resources.Expand_25;
-            this.btnMaximizar.Location = new System.Drawing.Point(1112, 1);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(40, 37);
-            this.btnMaximizar.TabIndex = 76;
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
             // btnPesquisar
             // 
@@ -825,23 +780,6 @@
             this.btnLimpar.EnabledChanged += new System.EventHandler(this.btnPesquisar_EnabledChanged);
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizar.Image = global::SysPark.Properties.Resources.Minus;
-            this.btnMinimizar.Location = new System.Drawing.Point(1064, 1);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(40, 37);
-            this.btnMinimizar.TabIndex = 69;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Visible = false;
-            // 
             // btnFechar
             // 
             this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -859,6 +797,30 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // lblrelCaixa
+            // 
+            this.lblrelCaixa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblrelCaixa.AutoSize = true;
+            this.lblrelCaixa.BackColor = System.Drawing.Color.Transparent;
+            this.lblrelCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblrelCaixa.ForeColor = System.Drawing.Color.LightGray;
+            this.lblrelCaixa.Location = new System.Drawing.Point(390, 5);
+            this.lblrelCaixa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblrelCaixa.Name = "lblrelCaixa";
+            this.lblrelCaixa.Size = new System.Drawing.Size(349, 31);
+            this.lblrelCaixa.TabIndex = 1;
+            this.lblrelCaixa.Text = "SysPark - Relatório Caixa\r\n";
+            this.lblrelCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // toolTipMod1
+            // 
+            this.toolTipMod1.AutoSize = false;
+            this.toolTipMod1.BackColor = System.Drawing.Color.Black;
+            this.toolTipMod1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.toolTipMod1.ForeColor = System.Drawing.Color.LightGray;
+            this.toolTipMod1.OwnerDraw = true;
+            this.toolTipMod1.Size = new System.Drawing.Size(100, 30);
+            // 
             // frmRelatorioCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -866,7 +828,7 @@
             this.ClientSize = new System.Drawing.Size(1201, 634);
             this.Controls.Add(this.pnlrelCaixa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRelatorioCaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRelatorioCaixa";
@@ -907,7 +869,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label lblrelCaixa;
         private System.Windows.Forms.Panel pnlData;
@@ -941,7 +902,6 @@
         private System.Windows.Forms.Label label25;
         public MaskedTextBoxMod.MaskedTextBoxMod mskHora;
         public MaskedTextBoxMod.MaskedTextBoxMod mskData;
-        private System.Windows.Forms.Button btnMaximizar;
         private ButtonMod.ButtonMod btnPesquisar;
         private ButtonMod.ButtonMod btnLimpar;
     }

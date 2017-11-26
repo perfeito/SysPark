@@ -227,7 +227,7 @@ namespace SysPark
         private void ListaFormRelatorios()
         {
             relatorios.Add(new KeyValuePair<string, string>("btnRelCaixa", "Caixa"));
-            //relatorios.Add(new KeyValuePair<string, string>("btnPromocao", "Descontos"));
+            relatorios.Add(new KeyValuePair<string, string>("btnPromocao", "Carros no Pátio"));
 
             relatorios.Sort(OrdemAlfabetica);
         }
@@ -273,7 +273,7 @@ namespace SysPark
                     break;
                 case "btnPromocao":
                     {
-                        frmRelatorioDescontos relDesc = new frmRelatorioDescontos();
+                        frmRelatorioVeiculosPatio relDesc = new frmRelatorioVeiculosPatio();
                         relDesc.ShowDialog();
                     }
                     break;

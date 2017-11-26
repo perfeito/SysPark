@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFechaCaixa));
             this.pnlfechaCaixa = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxMod1 = new PictureBoxMod.PictureBoxMod();
             this.panel7 = new System.Windows.Forms.Panel();
             this.mskHora = new MaskedTextBoxMod.MaskedTextBoxMod();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -44,8 +43,6 @@
             this.txtDesconto = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.pnlDebito = new System.Windows.Forms.Panel();
             this.txtDebito = new System.Windows.Forms.TextBox();
             this.pnlDebito2 = new System.Windows.Forms.Panel();
@@ -70,11 +67,14 @@
             this.txtCheque = new System.Windows.Forms.TextBox();
             this.pnlCheque2 = new System.Windows.Forms.Panel();
             this.lblCheque = new System.Windows.Forms.Label();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.lblfechaCaixa = new System.Windows.Forms.Label();
+            this.pictureBoxMod1 = new PictureBoxMod.PictureBoxMod();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlfechaCaixa.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMod1)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnlDescontos.SuspendLayout();
@@ -84,6 +84,7 @@
             this.pnlDinheiro.SuspendLayout();
             this.pnlTroco.SuspendLayout();
             this.pnlCheque.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMod1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlfechaCaixa
@@ -93,6 +94,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlfechaCaixa.BackColor = System.Drawing.Color.Black;
             this.pnlfechaCaixa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlfechaCaixa.Controls.Add(this.button1);
             this.pnlfechaCaixa.Controls.Add(this.panel1);
             this.pnlfechaCaixa.Controls.Add(this.btnFechar);
             this.pnlfechaCaixa.Controls.Add(this.lblfechaCaixa);
@@ -126,19 +128,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1054, 522);
             this.panel1.TabIndex = 1;
-            // 
-            // pictureBoxMod1
-            // 
-            this.pictureBoxMod1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBoxMod1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.pictureBoxMod1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMod1.Image")));
-            this.pictureBoxMod1.Location = new System.Drawing.Point(747, 61);
-            this.pictureBoxMod1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxMod1.Name = "pictureBoxMod1";
-            this.pictureBoxMod1.Size = new System.Drawing.Size(107, 98);
-            this.pictureBoxMod1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxMod1.TabIndex = 139;
-            this.pictureBoxMod1.TabStop = false;
             // 
             // panel7
             // 
@@ -315,50 +304,6 @@
             this.label1.Size = new System.Drawing.Size(136, 29);
             this.label1.TabIndex = 79;
             this.label1.Text = "Descontos";
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
-            this.btnVoltar.Location = new System.Drawing.Point(583, 389);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(215, 111);
-            this.btnVoltar.TabIndex = 120;
-            this.btnVoltar.Tag = "";
-            this.btnVoltar.Text = "Voltar\r\n(ESC)";
-            this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.btnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnConfirmar.FlatAppearance.BorderSize = 0;
-            this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
-            this.btnConfirmar.Location = new System.Drawing.Point(807, 389);
-            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(215, 111);
-            this.btnConfirmar.TabIndex = 119;
-            this.btnConfirmar.Tag = "";
-            this.btnConfirmar.Text = "Confirmar\r\n(Enter)";
-            this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // pnlDebito
             // 
@@ -692,6 +637,78 @@
             this.lblCheque.TabIndex = 79;
             this.lblCheque.Text = "Cheque";
             // 
+            // lblfechaCaixa
+            // 
+            this.lblfechaCaixa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblfechaCaixa.AutoSize = true;
+            this.lblfechaCaixa.BackColor = System.Drawing.Color.Transparent;
+            this.lblfechaCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfechaCaixa.ForeColor = System.Drawing.Color.LightGray;
+            this.lblfechaCaixa.Location = new System.Drawing.Point(409, 5);
+            this.lblfechaCaixa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblfechaCaixa.Name = "lblfechaCaixa";
+            this.lblfechaCaixa.Size = new System.Drawing.Size(322, 31);
+            this.lblfechaCaixa.TabIndex = 1;
+            this.lblfechaCaixa.Text = "SysPark - Fechar Caixa";
+            this.lblfechaCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxMod1
+            // 
+            this.pictureBoxMod1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBoxMod1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.pictureBoxMod1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMod1.Image")));
+            this.pictureBoxMod1.Location = new System.Drawing.Point(747, 61);
+            this.pictureBoxMod1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxMod1.Name = "pictureBoxMod1";
+            this.pictureBoxMod1.Size = new System.Drawing.Size(107, 98);
+            this.pictureBoxMod1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxMod1.TabIndex = 139;
+            this.pictureBoxMod1.TabStop = false;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnVoltar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btnVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
+            this.btnVoltar.Location = new System.Drawing.Point(583, 389);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(215, 111);
+            this.btnVoltar.TabIndex = 120;
+            this.btnVoltar.Tag = "";
+            this.btnVoltar.Text = "Voltar\r\n(ESC)";
+            this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnConfirmar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
+            this.btnConfirmar.Location = new System.Drawing.Point(807, 389);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(215, 111);
+            this.btnConfirmar.TabIndex = 119;
+            this.btnConfirmar.Tag = "";
+            this.btnConfirmar.Text = "Confirmar\r\n(Enter)";
+            this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
             // btnFechar
             // 
             this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -709,20 +726,22 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // lblfechaCaixa
+            // button1
             // 
-            this.lblfechaCaixa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblfechaCaixa.AutoSize = true;
-            this.lblfechaCaixa.BackColor = System.Drawing.Color.Transparent;
-            this.lblfechaCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfechaCaixa.ForeColor = System.Drawing.Color.LightGray;
-            this.lblfechaCaixa.Location = new System.Drawing.Point(409, 5);
-            this.lblfechaCaixa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblfechaCaixa.Name = "lblfechaCaixa";
-            this.lblfechaCaixa.Size = new System.Drawing.Size(322, 31);
-            this.lblfechaCaixa.TabIndex = 1;
-            this.lblfechaCaixa.Text = "SysPark - Fechar Caixa";
-            this.lblfechaCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::SysPark.Properties.Resources.Cancel;
+            this.button1.Location = new System.Drawing.Point(1019, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 37);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmFechaCaixa
             // 
@@ -744,7 +763,6 @@
             this.pnlfechaCaixa.ResumeLayout(false);
             this.pnlfechaCaixa.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMod1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -763,6 +781,7 @@
             this.pnlTroco.PerformLayout();
             this.pnlCheque.ResumeLayout(false);
             this.pnlCheque.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMod1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -812,5 +831,6 @@
         public MaskedTextBoxMod.MaskedTextBoxMod mskHora;
         private System.Windows.Forms.Label label6;
         private PictureBoxMod.PictureBoxMod pictureBoxMod1;
+        private System.Windows.Forms.Button button1;
     }
 }

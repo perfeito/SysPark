@@ -43,7 +43,7 @@ namespace SysPark.View
                     if (dgvPesquisa.Rows.Count <= 0)
                     {
                         dgvPesquisa.DataSource = null;
-                        var Mensagem = new frmMessage_Box("Não foram encontrados dados em sua busca.\rDeseja fazer uma nova busca?", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OKCancel, frmMessage_Box.enumMessageIcon.Question);
+                        var Mensagem = new frmMessage_Box("Não foram encontrados dados em sua busca.\rDeseja fazer uma nova busca?", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OKCancel, frmMessage_Box.enumMessageIcon.Question);
                         if (Mensagem.ShowDialog() == DialogResult.Cancel)
                             this.Close();
                         txtPesquisa.Clear();
@@ -71,7 +71,7 @@ namespace SysPark.View
                 if (dgvPesquisa.Rows.Count <= 0)
                 {
                     dgvPesquisa.DataSource = null;
-                    var Mensagem = new frmMessage_Box("Não foram encontrados dados em sua busca.\rDeseja fazer uma nova busca?", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OKCancel, frmMessage_Box.enumMessageIcon.Question);
+                    var Mensagem = new frmMessage_Box("Não foram encontrados dados em sua busca.\rDeseja fazer uma nova busca?", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OKCancel, frmMessage_Box.enumMessageIcon.Question);
                     if (Mensagem.ShowDialog() == DialogResult.Cancel)
                         this.Close();
                     txtPesquisa.Clear();
@@ -97,7 +97,7 @@ namespace SysPark.View
                 if (dgvPesquisa.Rows.Count <= 0)
                 {
                     dgvPesquisa.DataSource = null;
-                    var Mensagem = new frmMessage_Box("Não foram encontrados dados em sua busca.\rDeseja fazer uma nova busca?", "SHOP SYSTEM - ATENÇÃO", frmMessage_Box.enumMessageButton.OKCancel, frmMessage_Box.enumMessageIcon.Question);
+                    var Mensagem = new frmMessage_Box("Não foram encontrados dados em sua busca.\rDeseja fazer uma nova busca?", "SysPark - ATENÇÃO", frmMessage_Box.enumMessageButton.OKCancel, frmMessage_Box.enumMessageIcon.Question);
                     if (Mensagem.ShowDialog() == DialogResult.Cancel)
                         this.Close();
                     txtPesquisa.Clear();

@@ -290,7 +290,7 @@
             this.lbltop.Name = "lbltop";
             this.lbltop.Size = new System.Drawing.Size(283, 29);
             this.lbltop.TabIndex = 0;
-            this.lbltop.Text = "Shop System - Atenção";
+            this.lbltop.Text = "SysPark - Atenção";
             this.lbltop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
