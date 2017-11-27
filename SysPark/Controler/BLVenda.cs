@@ -36,7 +36,7 @@ namespace SysPark.Controler
                                 IDTipoVeiculo = Convert.ToInt32(row["IDTipoVeiculo"].ToString()),
                                 HoraEntrada = Convert.ToDateTime(row["HoraEntrada"].ToString()),
                                 MinCortesia = Convert.ToInt32(row["MinCortesia"].ToString()),
-                                IdVeiculoMensalista = Convert.ToInt32(row["IdVeiculoMensalista"].ToString()),
+                                IdVeiculoMensalista = Convert.ToInt64(row["IdVeiculoMensalista"].ToString()),
                             };
                             return modVenda;
                         }
@@ -51,6 +51,105 @@ namespace SysPark.Controler
                 }
             }
             catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public void InsereVeiculoMensalista(ModVeiculoMensalista modVeiculoMensalista)
+        {
+            try
+            {
+                using (var objConexao = clsDados.ConectaBanco())
+                {
+                    using (var objCommand = new SqlCommand("InsereVeiculoMensalista", objConexao))
+                    {
+                        objCommand.CommandType = CommandType.StoredProcedure;
+                        
+                        objCommand.Parameters.AddWithValue("@IDCliente", modVeiculoMensalista.idCliente);
+                        objCommand.Parameters.AddWithValue("@Placa", modVeiculoMensalista.placa);
+                        objCommand.Parameters.AddWithValue("@IDTipoVeiculo", modVeiculoMensalista.idTipoVeiculo);
+
+                        clsDados.ExecutaComando(objCommand, objConexao);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        
+        public void DeleteVeiculoMensalista(long ID)
+        {
+            try
+            {
+                using (var objConexao = clsDados.ConectaBanco())
+                {
+                    using (var objCommand = new SqlCommand("DeleteVeiculoMensalista", objConexao))
+                    {
+                        objCommand.CommandType = CommandType.StoredProcedure;
+
+                        objCommand.Parameters.AddWithValue("@ID", ID);
+
+                        clsDados.ExecutaComando(objCommand, objConexao);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public long VerificaVeiculoMensalista(string placa)
+        {
+            try
+            {
+                using (var objConexao = clsDados.ConectaBanco())
+                {
+                    using (var objCommand = new SqlCommand("VerificaVeiculoMensalista", objConexao))
+                    {
+                        objCommand.CommandType = CommandType.StoredProcedure;
+
+                        objCommand.Parameters.AddWithValue("@Placa", placa);
+
+                        DataTable data = clsDados.RetornaDados(objCommand);
+
+                        if (data.Rows.Count == 0)
+                        {
+                            return Convert.ToInt64( -1);
+                        }
+                        else
+                        {
+                            return Convert.ToInt64(data.Rows[0]["IDCliente"]);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public DataTable ListaVeiculosMensalistas(long CPF)
+        {
+            try
+            {
+                using (var objConexao = clsDados.ConectaBanco())
+                {
+                    using (var objCommand = new SqlCommand("ListaVeiculosMensalistas", objConexao))
+                    {
+                        objCommand.CommandType = CommandType.StoredProcedure;
+
+                        objCommand.Parameters.AddWithValue("@IDCliente", CPF);
+
+                        return clsDados.RetornaDados(objCommand);
+                    }
+                }
+            }
+            catch (Exception)
             {
                 throw;
             }

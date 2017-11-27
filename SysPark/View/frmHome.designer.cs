@@ -49,6 +49,7 @@ namespace SysPark
             this.rbConfig = new System.Windows.Forms.RadioButton();
             this.rbVendas = new System.Windows.Forms.RadioButton();
             this.rbProcedimento = new System.Windows.Forms.RadioButton();
+            this.rbRelatorio = new System.Windows.Forms.RadioButton();
             this.btnVendas = new ButtonMod.ButtonMod();
             this.btnPesquisa = new ButtonMod.ButtonMod();
             this.btnConfiguracao = new ButtonMod.ButtonMod();
@@ -61,7 +62,6 @@ namespace SysPark
             this.lblHome = new System.Windows.Forms.Label();
             this.toolTipMod1 = new ToolTipMod.ToolTipMod();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.rbRelatorio = new System.Windows.Forms.RadioButton();
             this.pnlHome.SuspendLayout();
             this.pnlCabecalho.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -385,6 +385,32 @@ namespace SysPark
             this.rbProcedimento.UseVisualStyleBackColor = false;
             this.rbProcedimento.CheckedChanged += new System.EventHandler(this.rbCadastro_CheckedChanged);
             // 
+            // rbRelatorio
+            // 
+            this.rbRelatorio.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbRelatorio.BackColor = System.Drawing.Color.Transparent;
+            this.rbRelatorio.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rbRelatorio.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.rbRelatorio.FlatAppearance.BorderSize = 0;
+            this.rbRelatorio.FlatAppearance.CheckedBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.rbRelatorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.rbRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.rbRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbRelatorio.ForeColor = System.Drawing.Color.LightGray;
+            this.rbRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("rbRelatorio.Image")));
+            this.rbRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rbRelatorio.Location = new System.Drawing.Point(4, 689);
+            this.rbRelatorio.Margin = new System.Windows.Forms.Padding(4);
+            this.rbRelatorio.Name = "rbRelatorio";
+            this.rbRelatorio.Size = new System.Drawing.Size(367, 129);
+            this.rbRelatorio.TabIndex = 149;
+            this.rbRelatorio.TabStop = true;
+            this.rbRelatorio.Text = "Relatórios";
+            this.rbRelatorio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rbRelatorio.UseVisualStyleBackColor = false;
+            this.rbRelatorio.CheckedChanged += new System.EventHandler(this.rbCadastro_CheckedChanged);
+            // 
             // btnVendas
             // 
             this.btnVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -588,11 +614,11 @@ namespace SysPark
             this.imageList.TransparentColor = System.Drawing.Color.Black;
             this.imageList.Images.SetKeyName(0, "btnCliente.png");
             this.imageList.Images.SetKeyName(1, "btnFuncionario.png");
-            this.imageList.Images.SetKeyName(2, "btnFornecedor.png");
+            this.imageList.Images.SetKeyName(2, "btnPromocao.png");
             this.imageList.Images.SetKeyName(3, "btnTipoVeiculo.png");
             this.imageList.Images.SetKeyName(4, "btnCargo.png");
             this.imageList.Images.SetKeyName(5, "btnProduto.png");
-            this.imageList.Images.SetKeyName(2, "btnPromocao.png");
+            this.imageList.Images.SetKeyName(6, "");
             this.imageList.Images.SetKeyName(7, "btnPerda.png");
             this.imageList.Images.SetKeyName(8, "btnServico.png");
             this.imageList.Images.SetKeyName(9, "btnSubGrupo.png");
@@ -617,32 +643,6 @@ namespace SysPark
             this.imageList.Images.SetKeyName(28, "btnMovDia.png");
             this.imageList.Images.SetKeyName(29, "btnControleEstoque.png");
             this.imageList.Images.SetKeyName(30, "btnConsultaPreco.png");
-            // 
-            // rbRelatorio
-            // 
-            this.rbRelatorio.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbRelatorio.BackColor = System.Drawing.Color.Transparent;
-            this.rbRelatorio.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rbRelatorio.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.rbRelatorio.FlatAppearance.BorderSize = 0;
-            this.rbRelatorio.FlatAppearance.CheckedBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.rbRelatorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.rbRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.rbRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbRelatorio.ForeColor = System.Drawing.Color.LightGray;
-            this.rbRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("rbRelatorio.Image")));
-            this.rbRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rbRelatorio.Location = new System.Drawing.Point(4, 689);
-            this.rbRelatorio.Margin = new System.Windows.Forms.Padding(4);
-            this.rbRelatorio.Name = "rbRelatorio";
-            this.rbRelatorio.Size = new System.Drawing.Size(367, 129);
-            this.rbRelatorio.TabIndex = 149;
-            this.rbRelatorio.TabStop = true;
-            this.rbRelatorio.Text = "Relatórios";
-            this.rbRelatorio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.rbRelatorio.UseVisualStyleBackColor = false;
-            this.rbRelatorio.CheckedChanged += new System.EventHandler(this.rbCadastro_CheckedChanged);
             // 
             // frmHome
             // 

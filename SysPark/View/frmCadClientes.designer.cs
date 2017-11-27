@@ -31,6 +31,10 @@ namespace SysPark.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcadClientes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlcadClientes = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -94,6 +98,7 @@ namespace SysPark.View
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblCelular = new System.Windows.Forms.Label();
             this.lblTelefone = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pnlAtualizado = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pnlAtualizado2 = new System.Windows.Forms.Panel();
@@ -105,6 +110,19 @@ namespace SysPark.View
             this.btnFechar = new System.Windows.Forms.Button();
             this.lblcadCliente = new System.Windows.Forms.Label();
             this.toolTipMod1 = new ToolTipMod.ToolTipMod();
+            this.pnlQuantidade = new System.Windows.Forms.Panel();
+            this.pnlQuantiade2 = new System.Windows.Forms.Panel();
+            this.cmbTipoVeiculo = new ComboBoxMod.ComboBoxMod();
+            this.lblQuantidade = new System.Windows.Forms.Label();
+            this.pnlCodigo = new System.Windows.Forms.Panel();
+            this.txtPlaca = new System.Windows.Forms.TextBox();
+            this.pnlCodigo2 = new System.Windows.Forms.Panel();
+            this.lblcodBarras = new System.Windows.Forms.Label();
+            this.btnADD = new ButtonMod.ButtonMod();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvMensalistas = new System.Windows.Forms.DataGridView();
             this.pnlcadClientes.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -123,8 +141,15 @@ namespace SysPark.View
             this.pnlEndereco2.SuspendLayout();
             this.pnlContato.SuspendLayout();
             this.pnlContato2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.pnlAtualizado.SuspendLayout();
             this.pnlAtualizado2.SuspendLayout();
+            this.pnlQuantidade.SuspendLayout();
+            this.pnlQuantiade2.SuspendLayout();
+            this.pnlCodigo.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMensalistas)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlcadClientes
@@ -406,7 +431,7 @@ namespace SysPark.View
             // 
             // tbcCliente
             // 
-            this.tbcCliente.BackColorPage = System.Drawing.SystemColors.Control;
+            this.tbcCliente.BackColorPage = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbcCliente.BackTabColor = System.Drawing.Color.Empty;
             this.tbcCliente.BackTabColorSelect = System.Drawing.Color.Empty;
             this.tbcCliente.BorderColor = System.Drawing.Color.Empty;
@@ -414,6 +439,7 @@ namespace SysPark.View
             this.tbcCliente.BorderTabColorSelect = System.Drawing.Color.Empty;
             this.tbcCliente.Controls.Add(this.tabDados);
             this.tbcCliente.Controls.Add(this.tabInfo);
+            this.tbcCliente.Controls.Add(this.tabPage1);
             this.tbcCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbcCliente.IndicationColor = System.Drawing.SystemColors.Highlight;
             this.tbcCliente.Location = new System.Drawing.Point(91, 138);
@@ -1233,6 +1259,21 @@ namespace SysPark.View
             this.lblTelefone.TabIndex = 18;
             this.lblTelefone.Text = "Telefone:";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage1.Controls.Add(this.panel3);
+            this.tabPage1.Controls.Add(this.btnADD);
+            this.tabPage1.Controls.Add(this.pnlQuantidade);
+            this.tabPage1.Controls.Add(this.pnlCodigo);
+            this.tabPage1.ForeColor = System.Drawing.Color.LightGray;
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(963, 458);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Veículos";
+            // 
             // pnlAtualizado
             // 
             this.pnlAtualizado.BackColor = System.Drawing.Color.Black;
@@ -1382,10 +1423,242 @@ namespace SysPark.View
             // 
             this.toolTipMod1.AutoSize = false;
             this.toolTipMod1.BackColor = System.Drawing.Color.Black;
-            this.toolTipMod1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.toolTipMod1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolTipMod1.ForeColor = System.Drawing.Color.LightGray;
             this.toolTipMod1.OwnerDraw = true;
             this.toolTipMod1.Size = new System.Drawing.Size(100, 30);
+            // 
+            // pnlQuantidade
+            // 
+            this.pnlQuantidade.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pnlQuantidade.BackColor = System.Drawing.Color.Black;
+            this.pnlQuantidade.Controls.Add(this.pnlQuantiade2);
+            this.pnlQuantidade.Controls.Add(this.lblQuantidade);
+            this.pnlQuantidade.Location = new System.Drawing.Point(390, 15);
+            this.pnlQuantidade.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlQuantidade.Name = "pnlQuantidade";
+            this.pnlQuantidade.Size = new System.Drawing.Size(253, 90);
+            this.pnlQuantidade.TabIndex = 85;
+            // 
+            // pnlQuantiade2
+            // 
+            this.pnlQuantiade2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlQuantiade2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlQuantiade2.Controls.Add(this.cmbTipoVeiculo);
+            this.pnlQuantiade2.Location = new System.Drawing.Point(0, 30);
+            this.pnlQuantiade2.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlQuantiade2.Name = "pnlQuantiade2";
+            this.pnlQuantiade2.Size = new System.Drawing.Size(253, 56);
+            this.pnlQuantiade2.TabIndex = 0;
+            // 
+            // cmbTipoVeiculo
+            // 
+            this.cmbTipoVeiculo.ArrowColor = System.Drawing.Color.LightGray;
+            this.cmbTipoVeiculo.ArrowColorDown = System.Drawing.Color.Red;
+            this.cmbTipoVeiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.cmbTipoVeiculo.BorderColor = System.Drawing.Color.Black;
+            this.cmbTipoVeiculo.BorderStyle = System.Windows.Forms.ButtonBorderStyle.Solid;
+            this.cmbTipoVeiculo.ButtonColor = System.Drawing.Color.Black;
+            this.cmbTipoVeiculo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbTipoVeiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoVeiculo.EnabledBorderColor = System.Drawing.Color.Black;
+            this.cmbTipoVeiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbTipoVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.5F);
+            this.cmbTipoVeiculo.ForeColor = System.Drawing.Color.LightGray;
+            this.cmbTipoVeiculo.ForecolorSelect = System.Drawing.Color.Black;
+            this.cmbTipoVeiculo.FormattingEnabled = true;
+            this.cmbTipoVeiculo.Location = new System.Drawing.Point(4, 3);
+            this.cmbTipoVeiculo.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTipoVeiculo.Name = "cmbTipoVeiculo";
+            this.cmbTipoVeiculo.SelectColor = System.Drawing.Color.LightGray;
+            this.cmbTipoVeiculo.Size = new System.Drawing.Size(245, 51);
+            this.cmbTipoVeiculo.TabIndex = 100;
+            // 
+            // lblQuantidade
+            // 
+            this.lblQuantidade.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblQuantidade.AutoSize = true;
+            this.lblQuantidade.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantidade.ForeColor = System.Drawing.Color.LightGray;
+            this.lblQuantidade.Location = new System.Drawing.Point(31, 1);
+            this.lblQuantidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuantidade.Name = "lblQuantidade";
+            this.lblQuantidade.Size = new System.Drawing.Size(198, 29);
+            this.lblQuantidade.TabIndex = 75;
+            this.lblQuantidade.Text = "Tipo de Veículo";
+            // 
+            // pnlCodigo
+            // 
+            this.pnlCodigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pnlCodigo.BackColor = System.Drawing.Color.Black;
+            this.pnlCodigo.Controls.Add(this.txtPlaca);
+            this.pnlCodigo.Controls.Add(this.pnlCodigo2);
+            this.pnlCodigo.Controls.Add(this.lblcodBarras);
+            this.pnlCodigo.Location = new System.Drawing.Point(23, 15);
+            this.pnlCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlCodigo.Name = "pnlCodigo";
+            this.pnlCodigo.Size = new System.Drawing.Size(290, 90);
+            this.pnlCodigo.TabIndex = 84;
+            // 
+            // txtPlaca
+            // 
+            this.txtPlaca.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPlaca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtPlaca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlaca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.5F);
+            this.txtPlaca.ForeColor = System.Drawing.Color.LightGray;
+            this.txtPlaca.Location = new System.Drawing.Point(3, 30);
+            this.txtPlaca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPlaca.MaxLength = 13;
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(285, 54);
+            this.txtPlaca.TabIndex = 74;
+            this.txtPlaca.Tag = "C";
+            this.txtPlaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pnlCodigo2
+            // 
+            this.pnlCodigo2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlCodigo2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlCodigo2.Location = new System.Drawing.Point(0, 30);
+            this.pnlCodigo2.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlCodigo2.Name = "pnlCodigo2";
+            this.pnlCodigo2.Size = new System.Drawing.Size(290, 37);
+            this.pnlCodigo2.TabIndex = 0;
+            // 
+            // lblcodBarras
+            // 
+            this.lblcodBarras.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblcodBarras.AutoSize = true;
+            this.lblcodBarras.BackColor = System.Drawing.Color.Transparent;
+            this.lblcodBarras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcodBarras.ForeColor = System.Drawing.Color.LightGray;
+            this.lblcodBarras.Location = new System.Drawing.Point(101, 2);
+            this.lblcodBarras.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcodBarras.Name = "lblcodBarras";
+            this.lblcodBarras.Size = new System.Drawing.Size(78, 29);
+            this.lblcodBarras.TabIndex = 75;
+            this.lblcodBarras.Text = "Placa";
+            // 
+            // btnADD
+            // 
+            this.btnADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnADD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btnADD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADD.Image = ((System.Drawing.Image)(resources.GetObject("btnADD.Image")));
+            this.btnADD.Location = new System.Drawing.Point(848, 20);
+            this.btnADD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnADD.Name = "btnADD";
+            this.btnADD.Size = new System.Drawing.Size(87, 85);
+            this.btnADD.TabIndex = 86;
+            this.toolTipMod1.SetToolTip(this.btnADD, "Cadastros");
+            this.btnADD.UseVisualStyleBackColor = false;
+            this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(26, 113);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(910, 324);
+            this.panel3.TabIndex = 87;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.LightGray;
+            this.label5.Location = new System.Drawing.Point(387, 1);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(160, 29);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Cadastrados";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.DarkGray;
+            this.panel4.Controls.Add(this.dgvMensalistas);
+            this.panel4.Location = new System.Drawing.Point(1, 30);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(908, 293);
+            this.panel4.TabIndex = 0;
+            // 
+            // dgvMensalistas
+            // 
+            this.dgvMensalistas.AllowUserToAddRows = false;
+            this.dgvMensalistas.AllowUserToDeleteRows = false;
+            this.dgvMensalistas.AllowUserToResizeColumns = false;
+            this.dgvMensalistas.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvMensalistas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMensalistas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMensalistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMensalistas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dgvMensalistas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMensalistas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMensalistas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMensalistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMensalistas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMensalistas.EnableHeadersVisualStyles = false;
+            this.dgvMensalistas.GridColor = System.Drawing.Color.Black;
+            this.dgvMensalistas.Location = new System.Drawing.Point(0, 0);
+            this.dgvMensalistas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvMensalistas.Name = "dgvMensalistas";
+            this.dgvMensalistas.ReadOnly = true;
+            this.dgvMensalistas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMensalistas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMensalistas.RowHeadersVisible = false;
+            this.dgvMensalistas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMensalistas.Size = new System.Drawing.Size(908, 293);
+            this.dgvMensalistas.TabIndex = 0;
+            this.dgvMensalistas.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMensalistas_CellMouseDoubleClick);
             // 
             // frmcadClientes
             // 
@@ -1427,10 +1700,20 @@ namespace SysPark.View
             this.pnlContato.PerformLayout();
             this.pnlContato2.ResumeLayout(false);
             this.pnlContato2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.pnlAtualizado.ResumeLayout(false);
             this.pnlAtualizado.PerformLayout();
             this.pnlAtualizado2.ResumeLayout(false);
             this.pnlAtualizado2.PerformLayout();
+            this.pnlQuantidade.ResumeLayout(false);
+            this.pnlQuantidade.PerformLayout();
+            this.pnlQuantiade2.ResumeLayout(false);
+            this.pnlCodigo.ResumeLayout(false);
+            this.pnlCodigo.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMensalistas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1511,5 +1794,19 @@ namespace SysPark.View
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblCelular;
         private System.Windows.Forms.Label lblTelefone;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Panel pnlQuantidade;
+        private System.Windows.Forms.Panel pnlQuantiade2;
+        public ComboBoxMod.ComboBoxMod cmbTipoVeiculo;
+        private System.Windows.Forms.Label lblQuantidade;
+        private System.Windows.Forms.Panel pnlCodigo;
+        public System.Windows.Forms.TextBox txtPlaca;
+        private System.Windows.Forms.Panel pnlCodigo2;
+        private System.Windows.Forms.Label lblcodBarras;
+        private ButtonMod.ButtonMod btnADD;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dgvMensalistas;
     }
 }

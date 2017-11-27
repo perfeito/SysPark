@@ -213,6 +213,33 @@ namespace SysPark.View
                 btnCancelar.Enabled = false;
                 btnEditar.Enabled = false;                
             }
+
+            listaTipoVeiculo();
+        }
+
+        public void listaTipoVeiculo()
+        {
+            try
+            {
+                cmbTipoVeiculo.Items.Clear();
+                BLTipoVeiculo objbLTipoVeiculo = new BLTipoVeiculo();
+                var tipoVeiculo = objbLTipoVeiculo.BuscaTipoVeiculoAtivos();
+
+                for (int i = 0; i < tipoVeiculo.Count; i++)
+                {
+                    cmbTipoVeiculo.Items.Add(new ComboBoxMod.ComboBoxItem(tipoVeiculo[i].Key, tipoVeiculo[i].Value));
+                }
+
+                if (cmbTipoVeiculo.Items.Count > 0)
+                {
+                    cmbTipoVeiculo.SelectedIndex = 0;
+                }
+            }
+            catch (Exception erro)
+            {
+                var Mensagem = new frmMessage_Box(erro.Message, "*****ALERTA*****", frmMessage_Box.enumMessageButton.OK, frmMessage_Box.enumMessageIcon.Error);
+                Mensagem.ShowDialog();
+            }
         }
 
         public void DesabilitaCampos()
@@ -366,6 +393,7 @@ namespace SysPark.View
             lbldataAtualizacao.Text = objModCliente.DataAtualiza.ToString();
             pcbCliente.Image = objBLFuncoesGenerica.ConverteByte_Imagem(objModPessoas.ImagemPessoa);
             pcbCliente.SizeMode = PictureBoxSizeMode.CenterImage;
+            dgvMensalistas.DataSource = new BLVenda().ListaVeiculosMensalistas(Convert.ToInt64(mskcpfCliente.Text));
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -484,6 +512,27 @@ namespace SysPark.View
         private void txtrgCliente_Click(object sender, EventArgs e)
         {
             (sender as TextBox).Text = string.Empty;
+        }
+
+        private void btnADD_Click(object sender, EventArgs e)
+        {
+            ModVeiculoMensalista modVeiculoMensalista = new ModVeiculoMensalista
+            {
+                placa = txtPlaca.Text,
+                idTipoVeiculo = Convert.ToInt32(cmbTipoVeiculo.SelectedValue),
+                idCliente = Convert.ToInt64(mskcpfCliente.Text)
+            };
+            new BLVenda().InsereVeiculoMensalista(modVeiculoMensalista);
+            txtPlaca.Text = string.Empty;
+            txtPlaca.Focus();
+            txtPlaca.Select();
+            dgvMensalistas.DataSource = new BLVenda().ListaVeiculosMensalistas(Convert.ToInt64(mskcpfCliente.Text));
+        }
+
+        private void dgvMensalistas_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            new BLVenda().DeleteVeiculoMensalista(Convert.ToInt64( dgvMensalistas.CurrentRow.Cells[0].Value));
+            dgvMensalistas.DataSource = new BLVenda().ListaVeiculosMensalistas(Convert.ToInt64(mskcpfCliente.Text));
         }
     }
 }

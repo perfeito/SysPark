@@ -33,10 +33,11 @@ namespace SysPark.View
             idvenda,
             idOperador,
             idcliente,
+            idMensalista,
             idSacola;
         private int
-            idterminal,
-        idMensalista;
+            idterminal
+        ;
         public decimal
             valorUnitario,
             quantidade,
@@ -280,6 +281,11 @@ namespace SysPark.View
 
                 txtTotal.Text = (Convert.ToDecimal(txtsubTotal.Text) - Convert.ToDecimal(txtDesconto.Text)).ToString("N2");
             }
+            if (modVenda.IdVeiculoMensalista != -1)
+            {
+                txtsubTotal.Text = "0.00";
+                txtTotal.Text = "0.00";
+            }
         }
 
         private void CalculaTotal()
@@ -332,8 +338,8 @@ namespace SysPark.View
                     HoraValor = Convert.ToDecimal(txtValorHora.Text),
                     MinCortesia = Convert.ToInt32(txtMInCortesia.Text),
                     IdCaixaAbertura = idcaixa,
-                    IdVeiculoMensalista = -1
-                };
+                    IdVeiculoMensalista = new BLVenda().VerificaVeiculoMensalista(txtPlaca.Text)
+            };
                 new BLVenda().InsereVenda(modVenda);
                 txtPlaca.Text = string.Empty;
                 txtHorarioEntrada.Text = "00:00";
@@ -362,7 +368,7 @@ namespace SysPark.View
                 idvenda = modVenda.ID;
                 txtDescricao.Text = modVenda.Descricao;
                 txtPlaca.Text = modVenda.Placa;
-                cmbTipoVeiculo.ValueMember = modVenda.IDTipoVeiculo.ToString();
+                cmbTipoVeiculo.SelectedIndex = modVenda.IDTipoVeiculo -1;
                 txtHorarioEntrada.Text = modVenda.HoraEntrada.ToShortTimeString();
                 txtMInCortesia.Text = modVenda.MinCortesia.ToString();
                 idMensalista = modVenda.IdVeiculoMensalista;

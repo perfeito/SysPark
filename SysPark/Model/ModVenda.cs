@@ -22,7 +22,7 @@ namespace SysPark.Model
         public decimal Credito { get; set; }
         public decimal Debito { get; set; }
         public decimal Dinheiro { get; set; }
-        public int IdVeiculoMensalista { get; set; }
+        public long IdVeiculoMensalista { get; set; }
         public long IdCaixaAbertura { get; set; }
         public long IdCaixaFechamento { get; set; }
     }

@@ -137,6 +137,7 @@
     <Compile Include="Model\ModProdutoServico.cs" />
     <Compile Include="Model\ModSeguranca.cs" />
     <Compile Include="Model\ModTipoVeiculo.cs" />
+    <Compile Include="Model\ModVeiculoMensalista.cs" />
     <Compile Include="Model\ModVenda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

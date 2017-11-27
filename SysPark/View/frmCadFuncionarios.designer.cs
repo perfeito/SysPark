@@ -450,7 +450,7 @@
             // 
             // tbcFunc
             // 
-            this.tbcFunc.BackColorPage = System.Drawing.SystemColors.Control;
+            this.tbcFunc.BackColorPage = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbcFunc.BackTabColor = System.Drawing.Color.Empty;
             this.tbcFunc.BackTabColorSelect = System.Drawing.Color.Empty;
             this.tbcFunc.BorderColor = System.Drawing.Color.Empty;
@@ -460,7 +460,7 @@
             this.tbcFunc.Controls.Add(this.tabInfo);
             this.tbcFunc.Controls.Add(this.tabPagamento);
             this.tbcFunc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbcFunc.IndicationColor = System.Drawing.Color.Empty;
+            this.tbcFunc.IndicationColor = System.Drawing.SystemColors.Highlight;
             this.tbcFunc.Location = new System.Drawing.Point(77, 122);
             this.tbcFunc.Margin = new System.Windows.Forms.Padding(4);
             this.tbcFunc.Name = "tbcFunc";
