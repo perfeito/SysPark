@@ -394,7 +394,7 @@ namespace SysPark
                     break;
                 case "btnTipoVeiculo":
                     {
-                        frmBuscaTipoVeiculo objfrmBuscaTipoVeiculo = new frmBuscaTipoVeiculo();
+                            frmBuscaTipoVeiculo objfrmBuscaTipoVeiculo = new frmBuscaTipoVeiculo();
                         objfrmBuscaTipoVeiculo.ShowDialog();
                     }
                     break;

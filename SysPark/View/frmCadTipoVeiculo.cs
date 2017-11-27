@@ -162,7 +162,8 @@ namespace SysPark.View
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            
+            frmBuscaTipoVeiculo objfrmBuscaTipoVeiculo = new frmBuscaTipoVeiculo();
+            objfrmBuscaTipoVeiculo.ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
